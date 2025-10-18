@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat - MaquinaIA</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2>Chat con MaquinaIA</h2>
+    <div class="chatbox">
+        {% for rol, mensaje in conversacion %}
+            <p><strong>{{ rol }}:</strong> {{ mensaje }}</p>
+        {% endfor %}
+    </div>
+
+    <form method="POST">
+        <input type="text" name="mensaje" placeholder="Escribe tu mensaje..." required>
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>
