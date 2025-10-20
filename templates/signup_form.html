@@ -1,0 +1,44 @@
+{% extends "base_template.html" %}
+
+{% block title %}Registro{% endblock %}
+
+{% block content %}
+    <div style="max-width:480px; margin: 0 auto;">
+        <h2>Registro</h2>
+        <form action="" method="post" novalidate>
+            {{ form.hidden_tag() }}
+            <div class="field-row">
+                <label for="name">{{ form.name.label.text }}</label>
+                {{ form.name(class_='form-control') }}
+                {% for error in form.name.errors %}
+                <div class="error">{{ error }}</div>
+                {% endfor %}
+            </div>
+            <div class="field-row">
+                <label for="email">{{ form.email.label.text }}</label>
+                {{ form.email(class_='form-control') }}
+                {% for error in form.email.errors %}
+                <div class="error">{{ error }}</div>
+                {% endfor %}
+            </div>
+            <div class="field-row">
+                <label for="password">{{ form.password.label.text }}</label>
+                {{ form.password(class_='form-control') }}
+                {% for error in form.password.errors %}
+                <div class="error">{{ error }}</div>
+                {% endfor %}
+            </div>
+            <div class="field-row">
+                <label for="password2">{{ form.password2.label.text }}</label>
+                {{ form.password2(class_='form-control') }}
+                {% for error in form.password2.errors %}
+                <div class="error">{{ error }}</div>
+                {% endfor %}
+            </div>
+            <div class="field-row">
+                {{ form.submit(class_='form-control') }}
+            </div>
+        </form>
+        <p style="text-align:center;">¿Ya tienes cuenta? <a href="{{ url_for('login') }}">Inicia sesión</a></p>
+    </div>
+{% endblock %}
