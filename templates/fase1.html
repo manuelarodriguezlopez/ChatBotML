@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Fase 1: Entendimiento del Negocio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            background-color: #e9f2f9;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        .navbar {
+            background-color: #1f4e79;
+        }
+        .navbar-brand, .nav-link, .navbar-text {
+            color: white !important;
+        }
+        .nav-link:hover {
+            color: #bcdfff !important;
+        }
+        .sidebar {
+            background-color: #f8fafc;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding: 20px;
+        }
+        .content {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            padding: 30px;
+        }
+        h4 {
+            color: #1f4e79;
+            border-left: 5px solid #1f4e79;
+            padding-left: 10px;
+            margin-bottom: 15px;
+        }
+        .list-group-item {
+            border: none;
+            background: transparent;
+            color: #1f4e79;
+            cursor: pointer;
+        }
+        .list-group-item:hover {
+            color: #0d6efd;
+        }
+        .menu-btn {
+            background-color: #0d6efd;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .menu-btn:hover {
+            background-color: #094cbd;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar superior -->
+    <nav class="navbar navbar-expand-lg navbar-dark shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">ChatBot ML</a>
+            <div class="d-flex">
+                <a href="{{ url_for('dashboard') }}" class="menu-btn me-2">Menú</a>
+                <a href="{{ url_for('logout') }}" class="btn btn-light btn-sm">Cerrar sesión</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contenido principal -->
+    <div class="container-fluid mt-4">
+        <div class="row">
+            <!-- Columna principal -->
+            <div class="col-md-8 mb-4">
+                <div class="content">
+                    <h4>Contexto del Proyecto</h4>
+                    <p>
+                        Este proyecto busca desarrollar un modelo inteligente capaz de identificar y clasificar residuos sólidos mediante el uso de redes neuronales convolucionales. 
+                        Su propósito principal es contribuir a la gestión eficiente de residuos y al fortalecimiento de prácticas ambientales sostenibles en diferentes entornos.
+                    </p>
+
+                    <h4>Objetivo del Negocio</h4>
+                    <p>
+                        El objetivo es crear un sistema automático que, a partir de imágenes captadas en tiempo real, determine el tipo de residuo 
+                        (orgánico, plástico, vidrio, metal, cartón o papel) mediante una red neuronal DenseNet121 entrenada con TensorFlow 2.x.
+                    </p>
+
+                    <h4>Importancia y Beneficios</h4>
+                    <p>
+                        Implementar este modelo permite optimizar los procesos de separación de desechos, reducir errores humanos y fortalecer la educación ambiental. 
+                        También contribuye al desarrollo de una economía circular y al aprovechamiento responsable de los recursos naturales.
+                    </p>
+
+                    <h4>Requerimientos del Sistema</h4>
+                    <ul>
+                        <li>Procesamiento de imágenes mediante TensorFlow o PyTorch.</li>
+                        <li>Clasificación en tiempo real a través de una cámara o dataset preentrenado.</li>
+                        <li>Integración con interfaz web o móvil.</li>
+                        <li>Almacenamiento de resultados en base de datos SQLite.</li>
+                    </ul>
+
+                    <h4>Actores Involucrados</h4>
+                    <p>
+                        Los principales actores son los desarrolladores del sistema, los administradores de gestión ambiental, y los usuarios finales encargados del proceso de clasificación.
+                    </p>
+
+                    <h4>Conclusión</h4>
+                    <p>
+                        Esta fase permite establecer los cimientos del proyecto, asegurando la comprensión del problema, los objetivos de negocio, 
+                        y el impacto esperado en la sostenibilidad ambiental.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Sidebar derecha -->
+            <div class="col-md-4">
+                <div class="sidebar">
+                    <h5 class="fw-bold text-primary">Contenido</h5>
+                    <hr>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Contexto del proyecto</li>
+                        <li class="list-group-item">Objetivo del negocio</li>
+                        <li class="list-group-item">Importancia y beneficios</li>
+                        <li class="list-group-item">Requerimientos</li>
+                        <li class="list-group-item">Actores involucrados</li>
+                        <li class="list-group-item">Conclusión</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
