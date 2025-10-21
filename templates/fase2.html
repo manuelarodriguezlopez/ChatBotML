@@ -49,7 +49,7 @@
     <!-- 🔹 Navbar superior -->
     <nav class="navbar navbar-expand-lg navbar-dark shadow-sm">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="#">Kefir</a>
+            <a class="navbar-brand fw-bold" href="#">SUGAR KEF</a>
             <div class="d-flex align-items-center">
                 <a href="{{ url_for('fase1') }}" class="menu-btn me-2 {% if request.path == '/fase1' %}active{% endif %}">Fase 1</a>
                 <a href="{{ url_for('fase2') }}" class="menu-btn me-2 {% if request.path == '/fase2' %}active{% endif %}">Fase 2</a>
@@ -61,7 +61,7 @@
     <!-- 🔹 Contenido principal -->
     <div class="container">
         <div class="content">
-            <h2 class="mb-4 text-center">📈 Fase 2: Predicción de Demanda de Kéfir</h2>
+            <h2 class="mb-4 text-center">Fase 2: Predicción de Demanda de Kéfir</h2>
             <p class="text-muted text-center">
                 Introduce los valores requeridos para estimar la demanda futura del producto utilizando el modelo de Machine Learning.
             </p>
@@ -97,7 +97,7 @@
 
             {% if prediccion %}
             <div class="alert alert-info mt-4 text-center">
-                <h4>🔮 Predicción estimada de demanda: <strong>{{ prediccion }}</strong> unidades</h4>
+                <h4> Predicción estimada de demanda: <strong>{{ prediccion }}</strong> unidades</h4>
             </div>
             {% endif %}
         </div>
