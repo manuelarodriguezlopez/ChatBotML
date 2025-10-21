@@ -9,8 +9,6 @@ import numpy as np
 import os
 import requests
 
-app = Flask(__name__)
-
 # ---------------- CARGAR MODELO DE DEMANDA ----------------
 model_path = os.path.join("ml_models", "demand_model.pkl")
 with open(model_path, 'rb') as f:
@@ -43,6 +41,13 @@ def create_app():
 
     # ---------------- RUTA PRINCIPAL ----------------
     @app.route('/')
+    def home():
+        if current_user.is_authenticated:
+            return redirect(url_for('dashboard'))
+        return redirect(url_for('login'))
+
+    # ---------------- DASHBOARD ----------------
+    @app.route('/dashboard')
     @login_required
     def dashboard():
         return render_template('dashboard.html')
@@ -145,9 +150,10 @@ def create_app():
 
     return app
 
+app = create_app()
+
+with app.app_context():
+    db.create_all()
 
 if __name__ == '__main__':
-    app = create_app()
-    with app.app_context():
-        db.create_all()
     app.run(debug=True)
