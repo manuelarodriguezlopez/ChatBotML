@@ -1,79 +1,13 @@
 body {
-    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-    margin: 0;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: radial-gradient(1200px 600px at 10% 10%, #c7e0ff 0%, rgba(199,224,255,0) 30%),
-                radial-gradient(800px 450px at 90% 90%, #f7d6ff 0%, rgba(247,214,255,0) 30%),
-                linear-gradient(180deg, #f3f8ff 0%, #eaf2fb 100%);
-    color: #223;
+    background-color: #f8f9fa;
 }
 
-.container {
-    background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(250,250,255,0.9));
-    padding: 36px 36px 28px 36px;
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(32,40,60,0.12);
-    width: 100%;
-    max-width: 720px;
-    margin: 28px;
-}
-
-h2 { color: #223; margin-top: 0; }
-
-form { margin-top: 18px; }
-
-input, button, textarea, select {
-    padding: 12px 14px;
-    margin: 8px 0;
-    border-radius: 8px;
-    border: 1px solid #e3e8ee;
-    font-size: 0.98rem;
-}
-
-button, input[type="submit"] {
-    background: linear-gradient(180deg, #3b82f6, #2563eb);
+.nav-tabs .nav-link.active {
+    background-color: #0d6efd;
     color: white;
-    border: none;
-    cursor: pointer;
-    padding: 12px 16px;
-    border-radius: 10px;
-    font-weight: 600;
+    font-weight: bold;
 }
 
-button:hover, input[type="submit"]:hover { opacity: 0.95; transform: translateY(-1px); }
-
-.form-control { padding: 10px 12px; border-radius: 8px; }
-.error { color: #c62828; margin-top: 6px; font-size: 0.9rem; }
-
-.topbar { width: 100%; position: absolute; top: 0; left: 0; }
-.topbar-inner { max-width: 1100px; margin: 18px auto; display:flex; align-items:center; justify-content:space-between; padding: 0 20px; }
-.brand a { font-weight: 700; color: #111827; text-decoration: none; font-size: 1.05rem; }
-.main-nav a { margin-left: 14px; color: #374151; text-decoration: none; font-weight: 600; }
-.main-nav a:hover { color: #111827; }
-
-@media (max-width: 600px) {
-    .container { margin: 20px; padding: 20px; }
-    .topbar-inner { padding: 0 12px; }
-}
-
-.chatbox {
-    background-color: white;
-    border: 1px solid #ccc;
-    padding: 100px;
-    height: 600px;
-    overflow-y: auto;
-    margin-bottom: 20px;
-}
-.user-info {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-.user-info li {
-    display: inline-block;
-    margin: 0;
-    padding: 0 10px 0 0;
+.card {
+    border-radius: 15px;
 }

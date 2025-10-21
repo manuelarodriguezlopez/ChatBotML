@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<!-- Barra de navegación superior -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">ChatBotML</a>
+    <div class="d-flex">
+      <span class="navbar-text text-white me-3">
+        Bienvenido, <strong>{{ session['usuario'] }}</strong>
+      </span>
+      <a href="{{ url_for('logout') }}" class="btn btn-outline-light btn-sm">Cerrar sesión</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Contenido principal -->
+<div class="container mt-5">
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="inicio-tab" data-bs-toggle="tab" data-bs-target="#inicio" type="button" role="tab">Inicio</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="proyecto-tab" data-bs-toggle="tab" data-bs-target="#proyecto" type="button" role="tab">Información del Proyecto</button>
+    </li>
+  </ul>
+
+  <div class="tab-content p-4 border border-top-0 bg-white rounded-bottom shadow-sm">
+    <!-- Pestaña 1 -->
+    <div class="tab-pane fade show active" id="inicio" role="tabpanel" aria-labelledby="inicio-tab">
+      <h4 class="mb-3">Inicio</h4>
+      <p>Bienvenida al panel principal del sistema. Aquí podrás acceder a la información general y herramientas del proyecto.</p>
+      <hr>
+      <p>Selecciona la pestaña <strong>"Información del Proyecto"</strong> para explorar los módulos disponibles.</p>
+    </div>
+
+    <!-- Pestaña 2 -->
+    <div class="tab-pane fade" id="proyecto" role="tabpanel" aria-labelledby="proyecto-tab">
+      <h4 class="mb-3">Información del Proyecto</h4>
+      <p>Aquí se visualizarán los datos del asistente migratorio o del chatbot que estés desarrollando.</p>
+
+      <div class="card shadow-sm mt-4">
+        <div class="card-body">
+          <h5 class="card-title">Nombre del proyecto:</h5>
+          <p class="card-text">Asistente Migratorio Inteligente</p>
+
+          <h5 class="card-title mt-3">Descripción:</h5>
+          <p class="card-text">Este sistema permitirá evaluar la probabilidad de ingreso a un país, sugerir destinos alternativos y ofrecer recomendaciones para mejorar la elegibilidad migratoria.</p>
+
+          <h5 class="card-title mt-3">Estado actual:</h5>
+          <span class="badge bg-info">En desarrollo</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
