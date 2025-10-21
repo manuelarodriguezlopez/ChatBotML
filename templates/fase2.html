@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Fase 2: Predicción de Demanda</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        body {
+            background-color: #e9f2f9;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        .navbar {
+            background-color: #1f4e79;
+        }
+        .navbar-brand, .nav-link, .navbar-text {
+            color: white !important;
+        }
+        .nav-link:hover {
+            color: #bcdfff !important;
+        }
+        .menu-btn {
+            background-color: #0d6efd;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .menu-btn:hover {
+            background-color: #094cbd;
+        }
+        .content {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            padding: 30px;
+            margin-top: 30px;
+        }
+        h2, h4 {
+            color: #1f4e79;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 🔹 Navbar superior -->
+    <nav class="navbar navbar-expand-lg navbar-dark shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">Kefir</a>
+            <div class="d-flex align-items-center">
+                <a href="{{ url_for('fase1') }}" class="menu-btn me-2 {% if request.path == '/fase1' %}active{% endif %}">Fase 1</a>
+                <a href="{{ url_for('fase2') }}" class="menu-btn me-2 {% if request.path == '/fase2' %}active{% endif %}">Fase 2</a>
+                <a href="{{ url_for('logout') }}" class="btn btn-light btn-sm">Cerrar sesión</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 🔹 Contenido principal -->
+    <div class="container">
+        <div class="content">
+            <h2 class="mb-4 text-center">📈 Fase 2: Predicción de Demanda de Kéfir</h2>
+            <p class="text-muted text-center">
+                Introduce los valores requeridos para estimar la demanda futura del producto utilizando el modelo de Machine Learning.
+            </p>
+
+            <form action="/fase2" method="POST" class="card p-4 shadow-sm mt-4">
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="cantidad_producida">Cantidad Producida</label>
+                        <input type="number" step="any" id="cantidad_producida" name="cantidad_producida" class="form-control" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="precio_unitario">Precio Unitario (USD)</label>
+                        <input type="number" step="any" id="precio_unitario" name="precio_unitario" class="form-control" required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="costo_produccion">Costo de Producción (USD)</label>
+                        <input type="number" step="any" id="costo_produccion" name="costo_produccion" class="form-control" required>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="campaña_marketing">¿Hubo Campaña de Marketing?</label>
+                        <select id="campaña_marketing" name="campaña_marketing" class="form-control">
+                            <option value="1">Sí</option>
+                            <option value="0">No</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-success mt-3">Predecir Demanda</button>
+            </form>
+
+            {% if prediccion %}
+            <div class="alert alert-info mt-4 text-center">
+                <h4>🔮 Predicción estimada de demanda: <strong>{{ prediccion }}</strong> unidades</h4>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

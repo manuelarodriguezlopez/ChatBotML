@@ -1,11 +1,21 @@
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, render_template, request, redirect, url_for, flash, jsonify
 from flask_login import LoginManager, login_user, login_required, logout_user, current_user
 from extensions import db
 from models import User, get_user_by_email
 from urllib.parse import urlparse
 from datetime import timedelta
+import pickle
+import numpy as np
 import os
 import requests
+
+app = Flask(__name__)
+
+# ---------------- CARGAR MODELO DE DEMANDA ----------------
+model_path = os.path.join("ml_models", "demand_model.pkl")
+with open(model_path, 'rb') as f:
+    demand_model = pickle.load(f)
+
 
 def create_app():
     app = Flask(__name__)
@@ -20,7 +30,6 @@ def create_app():
     # ---------------- CONFIGURAR reCAPTCHA ----------------
     RECAPTCHA_SITE_KEY = "6LcGqvErAAAAAKvvIVRi44w63x6oMf67AQb8aS4o"
     RECAPTCHA_SECRET_KEY = "6LcGqvErAAAAAKn3xmx5Yh1FENn3D8Tbko65m2xq"
-
 
     # ---------------- INICIALIZAR BASE Y LOGIN ----------------
     db.init_app(app)
@@ -105,6 +114,34 @@ def create_app():
         logout_user()
         flash('Sesión cerrada correctamente', 'info')
         return redirect(url_for('login'))
+
+    # ---------------- FASE 1 ----------------
+    @app.route('/fase1')
+    @login_required
+    def fase1():
+        return render_template('fase1.html')
+
+    # ---------------- FASE 2: PREDICCIÓN DE DEMANDA ----------------
+    @app.route("/fase2", methods=["GET", "POST"])
+    @login_required
+    def fase2():
+        if request.method == "POST":
+            try:
+                cantidad_producida = float(request.form["cantidad_producida"])
+                precio_unitario = float(request.form["precio_unitario"])
+                costo_produccion = float(request.form["costo_produccion"])
+                campaña_marketing = int(request.form["campaña_marketing"])
+
+                # Crear vector de entrada
+                X_new = np.array([[cantidad_producida, precio_unitario, costo_produccion, campaña_marketing]])
+                prediccion = demand_model.predict(X_new)[0]
+
+                return render_template("fase2.html", prediccion=round(prediccion, 2))
+
+            except Exception as e:
+                return jsonify({"error": str(e)})
+
+        return render_template("fase2.html")
 
     return app
 

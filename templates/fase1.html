@@ -19,6 +19,18 @@
         .nav-link:hover {
             color: #bcdfff !important;
         }
+        .menu-btn {
+            background-color: #0d6efd;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+        .menu-btn:hover {
+            background-color: #094cbd;
+        }
         .sidebar {
             background-color: #f8fafc;
             border-radius: 15px;
@@ -46,33 +58,22 @@
         .list-group-item:hover {
             color: #0d6efd;
         }
-        .menu-btn {
-            background-color: #0d6efd;
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: 0.3s;
-        }
-        .menu-btn:hover {
-            background-color: #094cbd;
-        }
     </style>
 </head>
 <body>
-    <!-- Navbar superior -->
+    <!-- 🔹 Navbar superior -->
     <nav class="navbar navbar-expand-lg navbar-dark shadow-sm">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="#">ChatBot ML</a>
-            <div class="d-flex">
-                <a href="{{ url_for('dashboard') }}" class="menu-btn me-2">Menú</a>
+            <a class="navbar-brand fw-bold" href="#">Kefir</a>
+            <div class="d-flex align-items-center">
+                <a href="{{ url_for('fase1') }}" class="menu-btn me-2 {% if request.path == '/fase1' %}active{% endif %}">Fase 1</a>
+                <a href="{{ url_for('fase2') }}" class="menu-btn me-2 {% if request.path == '/fase2' %}active{% endif %}">Fase 2</a>
                 <a href="{{ url_for('logout') }}" class="btn btn-light btn-sm">Cerrar sesión</a>
             </div>
         </div>
     </nav>
 
-    <!-- Contenido principal -->
+    <!-- 🔹 Contenido principal -->
     <div class="container-fluid mt-4">
         <div class="row">
             <!-- Columna principal -->
@@ -123,12 +124,12 @@
                     <h5 class="fw-bold text-primary">Contenido</h5>
                     <hr>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Contexto del proyecto</li>
-                        <li class="list-group-item">Objetivo del negocio</li>
-                        <li class="list-group-item">Importancia y beneficios</li>
-                        <li class="list-group-item">Requerimientos</li>
-                        <li class="list-group-item">Actores involucrados</li>
-                        <li class="list-group-item">Conclusión</li>
+                        <li class="list-group-item"><a href="#contexto">Contexto del Proyecto</a></li>
+                        <li class="list-group-item"><a href="#objetivo">Objetivo del Negocio</a></li>
+                        <li class="list-group-item"><a href="#beneficios">Importancia y Beneficios</a></li>
+                        <li class="list-group-item"><a href="#requerimientos">Requerimientos</a></li>
+                        <li class="list-group-item"><a href="#actores">Actores Involucrados</a></li>
+                        <li class="list-group-item"><a href="#conclusion">Conclusión</a></li>
                     </ul>
                 </div>
             </div>

@@ -1,0 +1,6 @@
+fecha,ciudad,tipo_producto,cantidad_producida,cantidad_vendida,precio_unitario,costo_produccion,inventario_final,campaña_marketing,estacion
+2024-01-01,Loja,Clásico Piña,800,750,1.20,0.65,50,0,verano
+2024-02-01,Loja,Clásico Piña,850,830,1.25,0.66,20,1,verano
+2024-03-01,Loja,Mora Tropical,900,850,1.30,0.70,50,0,otoño
+2024-04-01,Loja,Mora Tropical,950,920,1.35,0.72,30,1,otoño
+2024-05-01,Cuenca,Guayaba Mix,1000,970,1.40,0.75,30,1,invierno
