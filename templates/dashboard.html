@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>ChatBotML | Fase 1 del Proyecto</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f5f8fb, #e8eff7);
+            color: #1a1a1a;
+        }
+        .navbar {
+            background-color: #0a4275;
+        }
+        .navbar-brand {
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        .sidebar {
+            position: sticky;
+            top: 80px;
+            height: calc(100vh - 120px);
+            padding-top: 1rem;
+            border-right: 1px solid #dee2e6;
+        }
+        .sidebar a {
+            display: block;
+            padding: 10px 15px;
+            color: #0a4275;
+            text-decoration: none;
+            border-left: 3px solid transparent;
+            transition: all 0.2s;
+        }
+        .sidebar a:hover, .sidebar a.active {
+            background-color: #e6effa;
+            border-left-color: #0a4275;
+            font-weight: 600;
+        }
+        section {
+            padding: 40px 0;
+            border-bottom: 1px solid #dee2e6;
+        }
+        h2 {
+            color: #0a4275;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        footer {
+            background-color: #f8f9fa;
+            color: #555;
+            font-size: 0.9rem;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#sidebarMenu" data-bs-offset="80" tabindex="0">
+
+<nav class="navbar navbar-expand-lg navbar-dark shadow-sm fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"><i class="bi bi-robot me-2"></i>ChatBotML</a>
+    <div class="d-flex">
+      <span class="navbar-text text-white me-3">Bienvenido, <strong>{{ session['usuario'] }}</strong></span>
+      <a href="{{ url_for('logout') }}" class="btn btn-outline-light btn-sm">Cerrar sesión</a>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid" style="margin-top:90px;">
+  <div class="row">
+    <nav class="col-md-3 col-lg-2 sidebar" id="sidebarMenu">
+      <a href="#contexto" class="active">Contexto del Proyecto</a>
+      <a href="#objetivos">Objetivos de Negocio</a>
+      <a href="#preguntas">Preguntas Clave</a>
+      <a href="#evaluacion">Evaluación de Datos</a>
+      <a href="#viabilidad">Análisis de Viabilidad</a>
+      <a href="#beneficios">Importancia y Beneficios</a>
+      <a href="#requerimientos">Requerimientos del Sistema</a>
+      <a href="#actores">Actores Involucrados</a>
+      <a href="#indicadores">Indicadores de Éxito</a>
+      <a href="#conclusion">Conclusión</a>
+      <a href="#referencias">Referencias</a>
+    </nav>
+
+    <main class="col-md-9 col-lg-10 px-4">
+      <section id="contexto">
+        <h2><i class="bi bi-lightbulb me-2"></i>Contexto del Proyecto</h2>
+        <p>El proyecto tiene como propósito aplicar técnicas de Machine Learning para optimizar los procesos de producción y comercialización de kéfir. A partir de registros históricos de ventas, consumo y producción, se desarrollará un sistema capaz de predecir la demanda y segmentar clientes según sus hábitos de compra. Esta información permitirá a KEFIRLAB planificar la producción con mayor precisión, reducir desperdicios y fortalecer su estrategia comercial basada en datos.</p>
+      </section>
+
+      <section id="objetivos">
+        <h2><i class="bi bi-bullseye me-2"></i>Objetivos de Negocio</h2>
+        <p>Convertir las necesidades empresariales en objetivos medibles, como mejorar la exactitud en la predicción de demanda, optimizar los procesos de planificación y definir estrategias de marketing personalizadas por segmento de cliente. El sistema buscará combinar precisión analítica con usabilidad práctica dentro del flujo operativo de KEFIRLAB.</p>
+      </section>
+
+      <section id="preguntas">
+        <h2><i class="bi bi-question-circle me-2"></i>Preguntas Clave</h2>
+        <ul>
+          <li>¿Qué factores determinan las variaciones en la demanda del kéfir?</li>
+          <li>¿Cómo se agrupan los clientes según su comportamiento de compra y frecuencia?</li>
+          <li>¿Qué tipo de intervención comercial puede mejorar la retención por segmento?</li>
+        </ul>
+      </section>
+
+      <section id="evaluacion">
+        <h2><i class="bi bi-bar-chart me-2"></i>Evaluación de Datos</h2>
+        <p>Se examinarán los registros de ventas, inventarios y características de clientes. La evaluación se centrará en calidad de datos, consistencia temporal y representatividad. Se realizarán análisis exploratorios mediante Python, pandas y matplotlib para definir las variables con mayor impacto predictivo y eliminar ruido o duplicidad en los datos.</p>
+      </section>
+
+      <section id="viabilidad">
+        <h2><i class="bi bi-cpu me-2"></i>Análisis de Viabilidad</h2>
+        <p>El proyecto será evaluado en términos técnicos, económicos y de impacto organizacional. Se garantizará que los modelos sean escalables, interpretable y compatibles con las herramientas utilizadas por KEFIRLAB. Se emplearán librerías como TensorFlow, scikit-learn y Flask, considerando un despliegue en entorno local o nube.</p>
+      </section>
+
+      <section id="beneficios">
+        <h2><i class="bi bi-graph-up-arrow me-2"></i>Importancia y Beneficios</h2>
+        <p>El modelo permitirá mejorar la planificación de producción, anticipar fluctuaciones del mercado y diseñar estrategias de marketing personalizadas. Esto se traducirá en una reducción de desperdicios, una mejor gestión de inventarios y un aumento en la fidelización de clientes, fortaleciendo la sostenibilidad y rentabilidad de la empresa.</p>
+      </section>
+
+      <section id="requerimientos">
+        <h2><i class="bi bi-gear me-2"></i>Requerimientos del Sistema</h2>
+        <ul>
+          <li>Lenguaje: Python 3.11</li>
+          <li>Librerías: TensorFlow, scikit-learn, pandas, Flask</li>
+          <li>Base de datos: SQLite o MySQL</li>
+          <li>Interfaz: Bootstrap 5, HTML5 y CSS3</li>
+          <li>Despliegue: entorno local o nube (Heroku / Render)</li>
+        </ul>
+      </section>
+
+      <section id="actores">
+        <h2><i class="bi bi-people me-2"></i>Actores Involucrados</h2>
+        <ul>
+          <li><strong>Equipo de desarrollo:</strong> encargado de modelar, entrenar e implementar el sistema.</li>
+          <li><strong>Área de producción:</strong> provee datos y valida predicciones de demanda.</li>
+          <li><strong>Área comercial:</strong> emplea los resultados de segmentación en campañas de fidelización.</li>
+        </ul>
+      </section>
+
+      <section id="indicadores">
+        <h2><i class="bi bi-clipboard-check me-2"></i>Indicadores de Éxito</h2>
+        <ul>
+          <li>Precisión del modelo ≥ 90%.</li>
+          <li>Reducción del desperdicio de materia prima ≥ 10%.</li>
+          <li>Aumento en eficiencia de planificación ≥ 15%.</li>
+          <li>Incremento de fidelización ≥ 20%.</li>
+        </ul>
+      </section>
+
+      <section id="conclusion">
+        <h2><i class="bi bi-journal-check me-2"></i>Conclusión</h2>
+        <p>Esta primera fase define la estructura analítica del proyecto, asegurando que los objetivos de negocio y las capacidades técnicas estén alineados. Al comprender el contexto productivo y comercial de KEFIRLAB, se sientan las bases para construir un modelo predictivo y de segmentación con impacto real en la toma de decisiones empresariales.</p>
+      </section>
+
+      <section id="referencias">
+        <h2><i class="bi bi-book me-2"></i>Referencias</h2>
+        <ul>
+          <li>Schmid, P., Wurst, M., & Wirth, R. (2020). <em>CRISP-DM: A Standard Methodology for Data Mining Projects</em>. Springer.</li>
+          <li>Chollet, F. (2021). <em>Deep Learning with Python</em>. Manning Publications.</li>
+          <li>Han, J., Pei, J., & Kamber, M. (2022). <em>Data Mining: Concepts and Techniques</em>. Morgan Kaufmann.</li>
+          <li>Raschka, S., & Mirjalili, V. (2020). <em>Python Machine Learning</em>. Packt Publishing.</li>
+        </ul>
+      </section>
+    </main>
+  </div>
+</div>
+
+<footer class="text-center mt-5 py-3 border-top">
+  <small>Proyecto académico - Ingeniería de Sistemas y Computación | Universidad XYZ © 2025</small>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
