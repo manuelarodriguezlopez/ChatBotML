@@ -65,7 +65,7 @@
   <div class="container-fluid">
     <a class="navbar-brand" href="#"><i class="bi bi-robot me-2"></i>ChatBotML</a>
     <div class="d-flex">
-      <span class="navbar-text text-white me-3">Bienvenido, <strong>{{ session['usuario'] }}</strong></span>
+      <span class="navbar-text text-white me-3"><strong>{{ session['usuario'] }}</strong></span>
       <a href="{{ url_for('logout') }}" class="btn btn-outline-light btn-sm">Cerrar sesión</a>
     </div>
   </div>
