@@ -31,17 +31,17 @@
         .menu-btn:hover {
             background-color: #094cbd;
         }
-        .sidebar {
-            background-color: #f8fafc;
-            border-radius: 15px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            padding: 20px;
-        }
         .content {
             background-color: white;
             border-radius: 15px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
             padding: 30px;
+        }
+        .sidebar {
+            background-color: #f8fafc;
+            border-radius: 15px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding: 20px;
         }
         h4 {
             color: #1f4e79;
@@ -49,19 +49,19 @@
             padding-left: 10px;
             margin-bottom: 15px;
         }
-        .list-group-item {
-            border: none;
-            background: transparent;
+        .sidebar h4 {
             color: #1f4e79;
-            cursor: pointer;
+            border-left: 5px solid #1f4e79;
+            padding-left: 10px;
+            margin-bottom: 15px;
         }
-        .list-group-item:hover {
-            color: #0d6efd;
+        .sidebar a {
+            word-break: break-all;
         }
     </style>
 </head>
 <body>
-    <!-- 🔹 Navbar superior -->
+    <!-- Barra de navegación -->
     <nav class="navbar navbar-expand-lg navbar-dark shadow-sm">
         <div class="container">
             <a class="navbar-brand fw-bold" href="#">SUGAR KEF</a>
@@ -73,70 +73,107 @@
         </div>
     </nav>
 
-    <!-- 🔹 Contenido principal -->
+    <!-- Contenido principal -->
     <div class="container-fluid mt-4">
         <div class="row">
-            <!-- Columna principal -->
+            <!-- Columna izquierda -->
             <div class="col-md-8 mb-4">
                 <div class="content">
                     <h4>Contexto del Proyecto</h4>
                     <p>
-                        El proyecto <strong>SUGAR KEF</strong>  surge como una propuesta innovadora frente al creciente interés global por una alimentación saludable y la reducción del consumo de azúcar refinada. En respuesta a los problemas de salud asociados con este ingrediente como la obesidad, la diabetes tipo 2 y las enfermedades cardiovasculares, el emprendimiento busca desarrollar un endulzante funcional a base de fermentación de azúcares de frutas tropicales como piña y uva negra, utilizando kéfir de agua como agente biotecnológico.
+                        El proyecto <strong>SUGAR KEF</strong> surge como una propuesta innovadora frente al creciente interés global por una alimentación saludable y la reducción del consumo de azúcar refinada. En respuesta a los problemas de salud asociados con este ingrediente como la obesidad, la diabetes tipo 2 y las enfermedades cardiovasculares, el emprendimiento busca desarrollar un endulzante funcional a base de fermentación de azúcares de frutas tropicales como piña y uva negra, utilizando kéfir de agua como agente biotecnológico.
                         Este proceso fermentativo permite obtener un producto que no solo endulza, sino que también aporta beneficios probióticos, antioxidantes y digestivos, contribuyendo al bienestar general del consumidor. Además, el proyecto integra principios de sostenibilidad, economía circular y comercio justo, fomentando la participación de pequeños productores agrícolas y el uso de empaques ecológicos y biodegradables.
-                        En el ámbito local, <strong>SUGAR KEF</strong>  busca posicionarse como un emprendimiento agroalimentario con identidad ecuatoriana, que combina ciencia, tradición e innovación. A través de su propuesta, promueve el aprovechamiento de recursos endógenos, la reducción del impacto ambiental y el fortalecimiento de la economía rural.
-                        El proyecto responde así a una necesidad social y de mercado: ofrecer una alternativa saludable, sostenible y funcional al azúcar refinada, consolidando un modelo de negocio que une la biotecnología con el desarrollo local y el consumo responsable.
+                        En el ámbito local, <strong>SUGAR KEF</strong> busca posicionarse como un emprendimiento agroalimentario con identidad ecuatoriana, que combina ciencia, tradición e innovación. A través de su propuesta, promueve el aprovechamiento de recursos endógenos, la reducción del impacto ambiental y el fortalecimiento de la economía rural. El proyecto responde así a una necesidad social y de mercado: ofrecer una alternativa saludable, sostenible y funcional al azúcar refinada, consolidando un modelo de negocio que une la biotecnología con el desarrollo local y el consumo responsable.
                     </p>
 
                     <h4>Objetivo del Negocio</h4>
                     <p>
-                       El objetivo principal del emprendimiento <strong>SUGAR KEF</strong> es desarrollar y validar un prototipo viable de endulzante funcional elaborado mediante la fermentación de azúcares de frutas tropicales con kéfir de agua, evaluando sus propiedades fisicoquímicas,
-                        sensoriales y su aceptación comercial en el mercado de Loja.
-                       Este propósito busca ofrecer una alternativa saludable y natural al azúcar refinada, con beneficios probióticos y antioxidantes, promoviendo al mismo tiempo la sostenibilidad ambiental,
-                        el aprovechamiento de recursos locales y el fortalecimiento de la economía rural a través del uso de materias primas ecuatorianas como la piña, la guayaba y la panela orgánica.
+                        El objetivo principal del emprendimiento <strong>SUGAR KEF</strong> es desarrollar y validar un prototipo viable de endulzante funcional elaborado mediante la fermentación de azúcares de frutas tropicales con kéfir de agua, evaluando sus propiedades fisicoquímicas, sensoriales y su aceptación comercial en el mercado de Loja. Este propósito busca ofrecer una alternativa saludable y natural al azúcar refinada, con beneficios probióticos y antioxidantes, promoviendo al mismo tiempo la sostenibilidad ambiental, el aprovechamiento de recursos locales y el fortalecimiento de la economía rural a través del uso de materias primas ecuatorianas como la piña, la guayaba y la panela orgánica.
                     </p>
 
                     <h4>Importancia y Beneficios</h4>
-                        <p>
-                        El proyecto <strong>SUGAR KEF</strong> es relevante porque responde a una necesidad social y sanitaria actual: reducir el consumo de azúcar refinada sin renunciar al sabor ni a la tradición de endulzar los alimentos. 
-                        A través de la fermentación natural con kéfir de agua, se genera un producto innovador que combina ciencia, salud y sostenibilidad, aportando valor al sector agroalimentario ecuatoriano.
-                        </p>
+                    <p>
+                        El proyecto <strong>SUGAR KEF</strong> es relevante porque responde a una necesidad social y sanitaria actual: reducir el consumo de azúcar refinada sin renunciar al sabor ni a la tradición de endulzar los alimentos. A través de la fermentación natural con kéfir de agua, se genera un producto innovador que combina ciencia, salud y sostenibilidad, aportando valor al sector agroalimentario ecuatoriano.
+                    </p>
 
-                             <p><strong>Beneficios principales:</strong></p>
+                    <p><strong>Beneficios principales:</strong></p>
+                    <ul>
+                        <li><strong>Saludables:</strong> contiene probióticos, vitaminas y compuestos antioxidantes que mejoran la digestión, fortalecen el sistema inmunológico y reducen el impacto glucémico.</li>
+                        <li><strong>Ambientales:</strong> promueve el uso de materias primas locales y ecológicas, el aprovechamiento de frutas tropicales y el uso de empaques biodegradables, en coherencia con los principios de economía circular.</li>
+                        <li><strong>Económicos y sociales:</strong> fomenta el comercio justo y el desarrollo de pequeños productores rurales, generando nuevas oportunidades en el sector agroindustrial.</li>
+                        <li><strong>Innovadores:</strong> introduce una alternativa funcional y sostenible en el mercado de endulzantes, diferenciándose por su origen natural y su aporte al bienestar del consumidor.</li>
+                    </ul>
 
-                        <ul>
-                                <li>
-                                 <strong>Saludables:</strong> el endulzante contiene probióticos, vitaminas y compuestos antioxidantes que mejoran la digestión, fortalecen el sistema inmunológico y reducen el impacto glucémico.
-                                </li>
-                                    <li>
-                                        <strong>Ambientales:</strong> promueve el uso de materias primas locales y ecológicas, el aprovechamiento de frutas tropicales y el uso de empaques biodegradables, en coherencia con los principios de economía circular.
-                                    </li>
-                                <li>
-                                 <strong>Económicos y sociales:</strong> fomenta el comercio justo y el desarrollo de pequeños productores rurales, generando nuevas oportunidades en el sector agroindustrial.
-                                </li>
-                                     <li>
-                                      <strong>Innovadores:</strong> introduce una alternativa funcional y sostenible en el mercado de endulzantes, diferenciándose por su origen natural y su aporte al bienestar del consumidor.
-                                    </li>
-                        </ul>
-                             <p> En conjunto, <strong>SUGAR KEF</strong> representa una propuesta integral que contribuye al bienestar humano, la sostenibilidad ambiental y el desarrollo económico local, posicionándose como un modelo de emprendimiento saludable y responsable.
-                        </p>
+                    <p>
+                        En conjunto, <strong>SUGAR KEF</strong> representa una propuesta integral que contribuye al bienestar humano, la sostenibilidad ambiental y el desarrollo económico local, posicionándose como un modelo de emprendimiento saludable y responsable.
+                    </p>
+
                     <h4>Requerimientos del Sistema</h4>
                     <ul>
-                        <li>Procesamiento de imágenes mediante TensorFlow o PyTorch.</li>
-                        <li>Clasificación en tiempo real a través de una cámara o dataset preentrenado.</li>
-                        <li>Integración con interfaz web o móvil.</li>
-                        <li>Almacenamiento de resultados en base de datos SQLite.</li>
+                        <li>Implementación de modelos de machine learning utilizando TensorFlow o PyTorch para el análisis y predicción de patrones de producción, compra y venta.</li>
+                        <li>Entrenamiento supervisado y validación cruzada para evaluar la precisión del modelo.</li>
+                        <li>Interfaz gráfica o panel de control para visualizar resultados, métricas y comportamiento del modelo.</li>
+                        <li>Compatibilidad con módulos de análisis estadístico (NumPy, Pandas, Scikit-learn) para apoyo a la toma de decisiones.</li>
+                        <li>Escalabilidad para incluir futuros modelos predictivos relacionados con la calidad sensorial o la aceptación comercial del producto.</li>
+                        <li>Seguridad de datos mediante autenticación de usuarios y respaldo periódico de la base de datos.</li>
                     </ul>
 
                     <h4>Actores Involucrados</h4>
                     <p>
-                        Los principales actores son los desarrolladores del sistema, los administradores de gestión ambiental, y los usuarios finales encargados del proceso de clasificación.
+                        Los principales actores son los desarrolladores del sistema, los administradores de gestión y los usuarios finales encargados del proceso de clasificación.
                     </p>
 
-                    <h4>Conclusión</h4>
+                    <h4>Conclusión del Sistema</h4>
                     <p>
-                        Esta fase permite establecer los cimientos del proyecto, asegurando la comprensión del problema, los objetivos de negocio, 
-                        y el impacto esperado en la sostenibilidad ambiental.
+                        El desarrollo del sistema para el proyecto <strong>SUGAR KEF</strong> representa la integración entre la biotecnología y la inteligencia artificial aplicada a la producción agroalimentaria sostenible. A través del uso de técnicas de machine learning, el sistema permite analizar patrones de producción, compra y venta, optimizando la gestión de recursos y mejorando la toma de decisiones estratégicas.
                     </p>
+                    <p>
+                        Esta solución tecnológica apoya la viabilidad del emprendimiento desde una perspectiva operativa y comercial, refuerza su compromiso con la innovación, la sostenibilidad ambiental y el desarrollo rural. La automatización del análisis de datos y la predicción de comportamientos del mercado contribuyen a una gestión más eficiente y fortalece la competitividad del producto en un entorno que demanda alternativas saludables al azúcar refinada.
+                    </p>
+                    <p>
+                        En conjunto, el sistema de <strong>SUGAR KEF</strong> consolida una herramienta integral que une la ciencia, la tecnología y la responsabilidad social. Su implementación sienta las bases para la expansión futura del emprendimiento, permitiendo escalar los procesos productivos, mejorar la trazabilidad y garantizar la calidad del endulzante funcional, consolidando a <strong>SUGAR KEF</strong> como un referente nacional en innovación agroalimentaria sustentable.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Columna derecha: Referencias -->
+            <div class="col-md-4">
+                <div class="sidebar">
+                    <h4>Referencias Bibliográficas</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-3">
+                            <strong>Camargo DRB et al.</strong> «Derecho al consumo informado: el caso de las bebidas azucaradas en Colombia».  
+                            <em>Repertorio Medicina y Cirugía</em>, 2020.  
+                            <br>
+                            <a href="https://revistas.fucsalud.edu.co/index.php/repertorio/article/download/967/1177/2663" target="_blank" class="text-decoration-none text-primary">
+                                https://revistas.fucsalud.edu.co/index.php/repertorio/article/download/967/1177/2663
+                            </a>
+                        </li>
+                        <li class="mb-3">
+                            <strong>Monar M, et al.</strong> «Caracterización química y microbiológica del kéfir de agua artesanal de origen ecuatoriano».  
+                            <em>Avances en Ciencias e Ingenierías</em>, 2014.  
+                            <br>
+                            <a href="https://revistas.usfq.edu.ec/index.php/avances/article/download/160/162" target="_blank" class="text-decoration-none text-primary">
+                                https://revistas.usfq.edu.ec/index.php/avances/article/download/160/162
+                            </a>
+                        </li>
+                        <li class="mb-3">
+                            <strong>Galarza-Heredia LG, Mendoza-Rivadeneira FA, Barcia-Anchundia JX.</strong>  
+                            «Efecto del producto fermentativo de tibicos de kéfir como acidificante natural (Ecuador)». 2023.  
+                            <br>
+                            <a href="https://produccioncientificaluz.org/index.php/cientifica/article/view/39932" target="_blank" class="text-decoration-none text-primary">
+                                https://produccioncientificaluz.org/index.php/cientifica/article/view/39932
+                            </a>
+                        </li>
+                        <li class="mb-3">
+                            <strong>El Tiempo.</strong> «El 17 % de los niños en Colombia sufren de obesidad: una enfermedad producida por el excesivo consumo de azúcar».  
+                            <em>El Tiempo</em>, 2024.  
+                            <br>
+                            <a href="https://www.eltiempo.com/salud/el-17-de-los-ninos-en-colombia-sufren-de-obesidad-una-enfermedad-producida-por-el-excesivo-consumo-de-azucar-como-combatirlo-3399715" target="_blank" class="text-decoration-none text-primary">
+                                https://www.eltiempo.com/salud/el-17-de-los-ninos-en-colombia-sufren-de-obesidad-una-enfermedad-producida-por-el-excesivo-consumo-de-azucar-como-combatirlo-3399715
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
