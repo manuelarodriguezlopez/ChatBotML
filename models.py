@@ -21,3 +21,17 @@ class User(db.Model, UserMixin):
 
 def get_user_by_email(email):
     return User.query.filter_by(email=email).first()
+
+from extensions import db
+
+class Pedido(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    nombre = db.Column(db.String(100), nullable=False)
+    correo = db.Column(db.String(120), nullable=False)
+    producto = db.Column(db.String(100), nullable=False)
+    cantidad = db.Column(db.Integer, nullable=False)
+    direccion = db.Column(db.String(200), nullable=False)
+    fecha = db.Column(db.DateTime, server_default=db.func.now())
+
+    def __repr__(self):
+        return f'<Pedido {self.id} - {self.nombre}>'

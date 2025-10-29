@@ -9,12 +9,6 @@ import numpy as np
 import os
 import requests
 
-# ---------------- CARGAR MODELO DE DEMANDA ----------------
-model_path = os.path.join("ml_models", "demand_model.pkl")
-with open(model_path, 'rb') as f:
-    demand_model = pickle.load(f)
-
-
 def create_app():
     app = Flask(__name__)
 
@@ -120,35 +114,29 @@ def create_app():
         flash('Sesión cerrada correctamente', 'info')
         return redirect(url_for('login'))
 
-    # ---------------- FASE 1 ----------------
-    @app.route('/fase1')
+    # ---------------- EMPRESA ----------------
+    @app.route('/empresa')
     @login_required
-    def fase1():
-        return render_template('fase1.html')
+    def empresa():
+        return render_template('empresa.html')
 
-    # ---------------- FASE 2: PREDICCIÓN DE DEMANDA ----------------
-    @app.route("/fase2", methods=["GET", "POST"])
+    # ---------------- PEDIDO ----------------
+    @app.route('/pedido', methods=['GET', 'POST'])
     @login_required
-    def fase2():
-        if request.method == "POST":
-            try:
-                cantidad_producida = float(request.form["cantidad_producida"])
-                precio_unitario = float(request.form["precio_unitario"])
-                costo_produccion = float(request.form["costo_produccion"])
-                campaña_marketing = int(request.form["campaña_marketing"])
-
-                # Crear vector de entrada
-                X_new = np.array([[cantidad_producida, precio_unitario, costo_produccion, campaña_marketing]])
-                prediccion = demand_model.predict(X_new)[0]
-
-                return render_template("fase2.html", prediccion=round(prediccion, 2))
-
-            except Exception as e:
-                return jsonify({"error": str(e)})
-
-        return render_template("fase2.html")
+    def pedido():
+        if request.method == 'POST':
+            nombre = request.form['nombre']
+            correo = request.form['correo']
+            producto = request.form['producto']
+            cantidad = request.form['cantidad']
+            direccion = request.form['direccion']
+            # Aquí podrías guardar en la base de datos o enviar un correo de confirmación
+            flash('Pedido registrado con éxito', 'success')
+            return redirect(url_for('dashboard'))
+        return render_template('pedido.html')
 
     return app
+
 
 app = create_app()
 
