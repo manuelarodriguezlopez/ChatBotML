@@ -1,12 +1,13 @@
-from flask import Flask, render_template, request, redirect, url_for, flash, jsonify
+from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_login import LoginManager, login_user, login_required, logout_user, current_user
 from extensions import db
 from models import User, get_user_by_email
 from urllib.parse import urlparse
 from datetime import timedelta
-import pickle
-import numpy as np
 import os
+import pickle
+import pandas as pd
+import numpy as np
 import requests
 
 def create_app():
@@ -33,14 +34,34 @@ def create_app():
     def load_user(user_id):
         return User.query.get(int(user_id))
 
-    # ---------------- RUTA PRINCIPAL ----------------
+    # =========================================================
+    # CARGA DEL MODELO DE MACHINE LEARNING
+    # =========================================================
+    MODEL_PATH = "models/sugar_kef_model.pkl"
+    DATASET_PATH = "techniques_datasheet.csv"
+
+    sugar_model = None
+    encoder = None
+    tech_df = pd.DataFrame()
+
+    try:
+        with open(MODEL_PATH, "rb") as f:
+            sugar_model, encoder = pickle.load(f)
+        tech_df = pd.read_csv(DATASET_PATH)
+        print("Modelo ML y datasheet cargados correctamente.")
+    except Exception as e:
+        print(f"Error cargando modelo o datasheet: {e}")
+
+    # =========================================================
+    # RUTAS DEL SISTEMA ORIGINAL
+    # =========================================================
+
     @app.route('/')
     def home():
         if current_user.is_authenticated:
             return redirect(url_for('dashboard'))
         return redirect(url_for('login'))
 
-    # ---------------- DASHBOARD ----------------
     @app.route('/dashboard')
     @login_required
     def dashboard():
@@ -50,7 +71,7 @@ def create_app():
     @app.route('/login', methods=['GET', 'POST'])
     def login():
         if current_user.is_authenticated:
-            return redirect(url_for('dashboard'))
+            return redirect(url_for('login'))
 
         if request.method == 'POST':
             email = request.form.get('email')
@@ -58,10 +79,7 @@ def create_app():
 
             # Validar reCAPTCHA
             recaptcha_response = request.form.get('g-recaptcha-response')
-            payload = {
-                'secret': RECAPTCHA_SECRET_KEY,
-                'response': recaptcha_response
-            }
+            payload = {'secret': RECAPTCHA_SECRET_KEY, 'response': recaptcha_response}
             result = requests.post('https://www.google.com/recaptcha/api/siteverify', data=payload).json()
 
             if not result.get('success'):
@@ -130,14 +148,58 @@ def create_app():
             producto = request.form['producto']
             cantidad = request.form['cantidad']
             direccion = request.form['direccion']
-            # Aquí podrías guardar en la base de datos o enviar un correo de confirmación
             flash('Pedido registrado con éxito', 'success')
             return redirect(url_for('dashboard'))
         return render_template('pedido.html')
 
+    # =========================================================
+    # RUTA DE PREDICCIÓN (KÉFIR)
+    # =========================================================
+    @app.route('/predict', methods=['GET', 'POST'])
+    @login_required
+    def predict():
+        frutas = encoder.categories_[0] if encoder is not None else []
+
+        if request.method == 'POST':
+            fruta = request.form.get('fruta')
+            cantidad = request.form.get('cantidad')
+
+            if not fruta or not cantidad:
+                flash("Debe seleccionar una fruta y una cantidad válida.", "danger")
+                return redirect(url_for('predict'))
+
+            try:
+                cantidad = float(cantidad)
+                fruta_vector = np.array([[fruta]])
+                fruta_encoded = encoder.transform(fruta_vector).toarray()
+                entrada = np.concatenate([fruta_encoded, np.array([[cantidad]])], axis=1)
+
+                tecnica_predicha = sugar_model.predict(entrada)[0]
+
+                # Buscar información técnica
+                info = tech_df[tech_df['Tecnica_recomendada'] == tecnica_predicha]
+                ficha = info.to_dict('records')[0] if not info.empty else None
+
+                return render_template(
+                    'result.html',
+                    fruta=fruta,
+                    cantidad=cantidad,
+                    tecnica_predicha=tecnica_predicha,
+                    tecnica_info=ficha
+                )
+
+            except Exception as e:
+                flash(f"Error en la predicción: {e}", "danger")
+                return redirect(url_for('predict'))
+
+        return render_template('predict.html', frutas=frutas)
+
     return app
 
 
+# =========================================================
+# EJECUCIÓN
+# =========================================================
 app = create_app()
 
 with app.app_context():
