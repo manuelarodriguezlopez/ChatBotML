@@ -1,0 +1,501 @@
+Fruta,Cantidad_kefir,Azucar_%,Acidez_pH,Fibra_g,Tecnica_recomendada
+Feijoa,4.07,14.29,4.86,2.05,Osmosis inversa parcial
+Guanábana,1.91,19.54,3.15,0.79,Prensado mecánico
+Carambola,4.69,16.11,4.61,3.19,Licuado con agua
+Copoazú,1.9,12.72,4.47,2.86,Fermentación previa
+Durazno,7.65,12.33,3.9,3.31,Microondas controlado
+Zapote,4.17,15.42,4.77,3.1,Homogeneización mecánica
+Lulo,9.97,9.3,3.45,1.68,Extracción térmica
+Lulo,7.01,17.12,4.47,2.49,Homogeneización mecánica
+Mora,2.16,18.67,4.44,1.39,Evaporación controlada
+Cereza,4.38,12.56,3.51,3.73,Extracción térmica
+Coco,1.66,12.6,4.74,1.57,Decocción corta
+Cacao,4.29,17.03,4.75,2.87,Liofilización parcial
+Melón,7.24,16.66,3.45,1.46,Lixiviación
+Limón,2.05,6.85,3.24,1.82,Prensado hidráulico
+Arándano,9.53,10.1,4.51,0.52,Vapor indirecto
+Borojó,0.72,9.45,4.28,1.35,Microfiltración
+Tamarindo,0.57,7.0,4.92,1.93,Decocción corta
+Níspero,7.88,16.71,3.68,2.52,Prensado hidráulico
+Toronja,7.75,7.25,4.25,3.76,Agitación constante
+Kiwi,2.33,17.49,3.27,3.15,Fermentación previa
+Chirimoya,1.33,7.84,3.83,0.64,Extracción térmica
+Lulo,5.1,6.18,4.53,3.13,Microondas controlado
+Marolo,3.52,11.95,4.5,1.31,Maceración alcohólica leve
+Coco,3.74,7.84,3.24,2.82,Prensado mecánico
+Frambuesa,1.44,7.23,3.79,1.58,Fermentación previa
+Frambuesa,2.42,16.32,3.34,1.33,Fermentación previa
+Zapote,5.79,18.42,4.32,3.3,Homogeneización mecánica
+Limón,0.81,11.14,4.61,1.98,Lixiviación
+Zapote,7.49,11.86,3.47,1.19,Maceración lenta
+Aguacate,5.12,12.96,3.23,1.62,Maceración rápida
+Guayabo,1.91,15.15,4.55,3.33,Decocción corta
+Caqui,6.98,6.91,3.25,3.46,Maceración lenta
+Arazá,9.2,16.29,3.54,1.71,Prensado hidráulico
+Aguacate,8.25,6.91,4.53,1.97,Agitación constante
+Borojó,4.86,9.01,3.54,0.93,Prensado hidráulico
+Toronja,7.65,16.5,3.93,3.62,Homogeneización mecánica
+Granadilla,1.82,11.37,4.08,2.22,Centrifugación
+Pomelo,6.12,8.88,3.73,2.95,Prensado hidráulico
+Fresa,8.88,10.62,4.62,2.24,Vapor indirecto
+Piña,1.95,13.08,3.58,0.99,Fermentación previa
+Sandía,5.55,11.47,3.09,3.71,Extracción térmica
+Limón,7.06,17.17,3.18,1.61,Maceración rápida
+Camu camu,4.81,10.58,4.67,2.03,Extracción térmica
+Zapote,2.74,15.03,3.65,1.66,Extracción térmica
+Piña,1.38,7.69,3.8,1.87,Licuado con agua
+Zapote,2.46,15.03,3.72,3.95,Maceración rápida
+Zapote,1.71,7.3,3.13,3.42,Lixiviación
+Mandarina,2.84,16.47,4.23,1.63,Liofilización parcial
+Níspero,2.3,7.65,4.0,1.58,Vapor indirecto
+Granadilla,2.11,11.15,3.89,3.4,Difusión térmica
+Limón,7.28,18.64,3.97,0.74,Deshidratación solar
+Sandía,0.77,8.31,3.14,1.79,Maceración lenta
+Limón,8.18,18.15,3.3,1.54,Prensado hidráulico
+Granadilla,4.15,11.1,3.08,1.11,Prensado hidráulico
+Naranja,3.28,14.84,3.35,0.69,Prensado hidráulico
+Naranja,5.43,17.44,4.41,1.25,Homogeneización mecánica
+Durazno,7.5,16.4,4.89,1.62,Congelación-descongelación
+Fresa,7.33,14.2,4.62,1.04,Agitación constante
+Limón,7.15,19.87,4.67,0.8,Evaporación controlada
+Uva,3.63,15.21,3.65,3.36,Difusión osmótica
+Borojó,5.47,7.8,3.02,2.72,Prensado mecánico
+Arándano,8.46,8.9,3.92,2.76,Vapor indirecto
+Marolo,6.1,11.63,4.21,2.75,Vibración ultrasónica
+Marolo,2.03,7.04,3.7,1.63,Extracción térmica
+Feijoa,9.4,15.56,4.27,1.7,Evaporación controlada
+Aguacate,3.43,14.26,3.35,3.09,Maceración rápida
+Anón,9.63,18.13,4.13,2.74,Decantación natural
+Mango,7.72,17.24,3.21,2.15,Centrifugación
+Fresa,6.59,12.25,4.45,3.66,Osmosis inversa parcial
+Zapote,2.52,7.37,3.76,0.73,Difusión osmótica
+Caqui,7.08,18.74,4.41,1.67,Filtrado con gas CO₂
+Cacao,6.28,17.77,3.99,3.74,Evaporación controlada
+Lulo,9.81,7.28,4.57,1.37,Vapor indirecto
+Papayuela,6.54,13.5,4.29,0.89,Difusión térmica
+Níspero,6.55,14.75,3.44,3.19,Maceración lenta
+Guanábana,6.71,14.21,5.0,0.78,Agitación constante
+Papaya,7.93,8.08,3.48,2.36,Prensado mecánico
+Caimito,9.16,18.96,3.62,1.45,Prensado en frío
+Anón,7.13,7.79,4.98,1.32,Microondas controlado
+Mandarina,2.76,11.08,4.07,2.66,Difusión térmica
+Arazá,2.06,12.62,3.34,2.88,Prensado mecánico
+Copoazú,8.55,12.44,4.55,3.29,Difusión térmica
+Guayabo,2.46,15.16,4.31,2.74,Licuado con agua
+Zapote,3.29,12.64,4.56,3.08,Agitación constante
+Aguacate,4.17,7.46,3.33,0.64,Fermentación previa
+Pitahaya,8.94,6.42,4.26,1.81,Vapor indirecto
+Copoazú,5.16,7.64,4.69,3.45,Maceración alcohólica leve
+Pera,5.21,13.11,3.71,1.51,Prensado en frío
+Sandía,3.6,11.06,4.52,1.41,Difusión osmótica
+Guanábana,1.69,8.15,3.69,3.69,Maceración rápida
+Mandarino,9.46,11.63,3.09,3.52,Extracción térmica
+Granadilla,1.64,7.81,3.26,3.03,Maceración rápida
+Cereza,2.95,14.79,3.02,2.02,Centrifugación
+Borojó,7.51,11.85,4.31,3.56,Maceración alcohólica leve
+Papayuela,2.06,12.26,3.03,3.04,Difusión osmótica
+Borojó,2.06,10.63,3.21,2.47,Prensado hidráulico
+Durazno,5.56,6.71,3.26,1.62,Prensado en frío
+Durazno,5.86,9.43,3.65,1.54,Prensado mecánico
+Mango,1.62,8.57,4.44,1.14,Reposo fermentativo previo
+Toronja,3.3,8.84,4.79,0.77,Vibración ultrasónica
+Limón,1.72,6.92,4.7,2.51,Filtrado con gas CO₂
+Sandía,6.02,15.67,4.07,2.61,Decocción corta
+Sandía,7.36,17.39,3.18,3.09,Prensado hidráulico
+Camu camu,3.35,9.09,4.61,1.98,Vapor indirecto
+Cacao,5.39,11.92,3.99,3.33,Fermentación espontánea
+Plátano,7.16,13.38,4.8,1.7,Difusión lenta
+Durazno,8.23,13.43,4.4,2.13,Reposo fermentativo previo
+Plátano,0.87,6.54,3.48,3.47,Prensado mecánico
+Pitahaya,9.15,17.07,3.49,1.21,Fermentación previa
+Tamarindo,7.8,14.83,4.34,1.45,Reposo fermentativo previo
+Higo,1.38,16.66,4.39,1.55,Congelación-descongelación
+Guayabo,1.38,11.24,3.3,2.72,Prensado en frío
+Frambuesa,7.3,11.13,3.19,0.94,Extracción térmica
+Guanábana,1.51,7.28,4.22,2.2,Difusión térmica
+Coco,7.54,13.84,3.63,2.61,Fermentación previa
+Lulo,2.4,6.04,3.81,0.55,Lixiviación
+Caqui,1.17,6.16,4.12,2.88,Deshidratación solar
+Arándano,5.91,6.9,3.41,1.56,Prensado mecánico
+Camu camu,5.07,6.63,4.96,1.85,Vibración ultrasónica
+Arándano,0.91,12.03,3.66,2.34,Fermentación previa
+Guayabo,7.97,13.18,4.21,3.16,Difusión lenta
+Higo,5.52,18.64,4.35,0.6,Decocción corta
+Mandarina,3.47,7.12,4.16,0.9,Prensado en frío
+Piña,7.65,9.57,4.87,2.44,Fermentación espontánea
+Toronja,7.36,16.11,4.03,1.52,Licuado con agua
+Banano,8.27,7.41,3.77,2.3,Centrifugación
+Marolo,4.38,19.91,3.18,1.17,Difusión osmótica
+Papaya,4.55,6.33,3.8,2.46,Deshidratación solar
+Guayabo,9.95,12.42,3.35,0.75,Centrifugación
+Pomelo,5.43,7.73,3.26,1.54,Maceración lenta
+Tamarindo,8.52,18.61,4.9,3.79,Licuado con agua
+Níspero,2.04,7.86,3.11,0.72,Lixiviación
+Piña,3.43,14.83,3.76,0.79,Fermentación previa
+Tamarindo,6.69,8.46,4.95,2.41,Difusión lenta
+Limón,7.34,8.63,3.78,1.26,Difusión osmótica
+Mandarino,9.94,10.78,3.35,1.49,Lixiviación
+Marolo,9.68,17.82,3.48,0.99,Prensado hidráulico
+Mango,1.52,11.29,4.02,3.36,Congelación-descongelación
+Caqui,9.05,15.7,4.07,1.11,Decocción corta
+Níspero,4.55,15.37,3.51,1.88,Prensado en frío
+Marolo,4.06,12.5,4.2,3.57,Difusión térmica
+Piña,3.34,12.94,3.26,3.28,Prensado mecánico
+Níspero,8.0,9.58,4.74,3.51,Fermentación espontánea
+Tamarindo,2.09,12.76,4.58,0.97,Prensado mecánico
+Durazno,2.91,14.16,4.58,0.65,Maceración lenta
+Camu camu,9.01,19.72,3.05,3.07,Centrifugación
+Feijoa,8.13,10.36,3.72,0.63,Prensado mecánico
+Copoazú,5.31,18.05,4.07,1.12,Decantación natural
+Ciruela,7.86,15.82,3.97,3.46,Evaporación controlada
+Mandarino,8.71,18.04,3.18,1.03,Prensado en frío
+Feijoa,8.09,9.24,4.81,3.8,Difusión lenta
+Cacao,6.16,10.77,4.24,0.6,Reposo fermentativo previo
+Marolo,1.66,10.1,4.61,2.98,Liofilización parcial
+Guayaba,2.88,10.52,4.38,1.77,Congelación-descongelación
+Piña,6.71,18.75,3.92,2.48,Decocción corta
+Coco,8.8,7.75,3.73,0.55,Centrifugación
+Mango,5.59,14.12,3.05,2.83,Maceración rápida
+Pomelo,5.69,10.43,3.41,1.67,Lixiviación
+Sandía,8.05,13.15,3.14,1.65,Difusión osmótica
+Mora,5.79,18.87,4.98,3.13,Homogeneización mecánica
+Sandía,4.06,13.6,3.55,0.84,Maceración rápida
+Caimito,6.94,8.49,3.54,1.04,Fermentación previa
+Aguacate,6.65,19.2,3.86,2.33,Licuado con agua
+Banano,2.86,7.51,3.01,2.55,Prensado mecánico
+Papayuela,7.07,18.4,3.78,2.52,Centrifugación
+Cereza,5.77,13.26,3.72,2.23,Extracción térmica
+Papayuela,5.79,16.97,4.29,1.53,Liofilización parcial
+Copoazú,1.93,7.13,3.65,1.87,Difusión osmótica
+Guayaba,1.1,6.21,4.26,0.67,Fermentación espontánea
+Guanábana,5.71,10.42,3.97,0.66,Fermentación espontánea
+Camu camu,8.32,17.76,4.65,0.81,Deshidratación solar
+Feijoa,4.04,6.56,3.23,1.42,Prensado mecánico
+Pera,2.9,14.27,4.41,2.75,Reposo fermentativo previo
+Zapote,5.65,9.54,3.7,3.75,Lixiviación
+Pitahaya,7.99,10.61,3.14,3.28,Maceración lenta
+Borojó,5.97,16.95,4.73,3.13,Decantación natural
+Copoazú,3.65,13.82,3.9,0.56,Licuado con agua
+Naranja,4.6,14.21,3.32,1.98,Fermentación previa
+Feijoa,6.53,8.47,4.99,2.18,Maceración alcohólica leve
+Pera,1.0,8.3,3.09,3.35,Prensado en frío
+Guanábana,4.04,12.19,3.73,0.92,Prensado hidráulico
+Feijoa,2.95,15.15,3.54,2.33,Centrifugación
+Pitahaya,5.44,16.7,3.24,1.66,Maceración rápida
+Coco,0.76,10.7,3.54,1.05,Centrifugación
+Toronja,6.49,11.25,3.79,0.54,Difusión osmótica
+Lulo,9.15,15.02,3.19,3.34,Fermentación previa
+Papaya,8.07,11.4,3.42,3.49,Extracción térmica
+Carambola,4.77,9.73,3.49,2.82,Prensado hidráulico
+Chirimoya,3.25,15.64,3.73,3.03,Prensado mecánico
+Guayabo,3.97,11.42,3.25,2.44,Prensado hidráulico
+Coco,4.91,17.11,4.58,3.76,Microfiltración
+Copoazú,9.99,12.13,4.94,2.09,Reposo fermentativo previo
+Cacao,4.96,18.89,4.73,1.27,Microfiltración
+Papayuela,4.41,15.43,4.72,3.86,Filtrado con gas CO₂
+Maracuyá,2.71,12.42,4.01,2.03,Liofilización parcial
+Fresa,2.73,19.43,4.8,2.83,Congelación-descongelación
+Chirimoya,9.28,9.45,4.61,3.4,Agitación constante
+Copoazú,6.56,14.29,3.23,1.92,Prensado en frío
+Guanábana,8.51,18.63,3.98,1.28,Microfiltración
+Granadilla,2.85,11.62,4.63,0.75,Vapor indirecto
+Copoazú,5.87,18.19,3.78,2.25,Difusión osmótica
+Frambuesa,1.09,15.71,4.85,0.9,Decantación natural
+Granadilla,4.76,14.39,4.05,2.54,Difusión lenta
+Feijoa,1.67,9.99,4.32,3.34,Prensado mecánico
+Aguacate,7.18,18.45,4.57,3.44,Filtrado con gas CO₂
+Cereza,5.06,12.26,3.47,0.7,Prensado en frío
+Pitahaya,7.9,10.46,3.33,3.17,Extracción térmica
+Kiwi,5.29,8.06,4.86,2.28,Vapor indirecto
+Camu camu,5.17,8.1,3.47,1.36,Prensado en frío
+Cereza,3.18,16.44,4.21,1.3,Congelación-descongelación
+Uva,6.37,9.96,4.9,2.39,Vapor indirecto
+Caimito,4.71,10.98,4.2,3.48,Vibración ultrasónica
+Mandarina,7.01,6.02,4.97,1.67,Difusión térmica
+Melón,9.17,18.58,4.1,3.65,Filtrado con gas CO₂
+Chirimoya,4.87,8.8,3.54,1.78,Maceración lenta
+Cereza,8.19,16.37,3.34,3.55,Centrifugación
+Piña,7.33,8.77,4.13,0.86,Difusión térmica
+Banano,2.4,19.0,4.86,1.9,Homogeneización mecánica
+Guayabo,0.9,8.88,3.99,1.59,Fermentación espontánea
+Ciruela,6.52,9.72,4.5,0.82,Maceración alcohólica leve
+Durazno,4.95,12.66,4.61,3.25,Reposo fermentativo previo
+Sandía,0.58,11.8,4.89,1.81,Decantación natural
+Arazá,9.63,17.92,4.32,2.49,Evaporación controlada
+Arándano,8.79,7.36,3.58,0.77,Lixiviación
+Fresa,7.95,11.39,4.72,2.56,Maceración alcohólica leve
+Ciruela,9.56,19.46,4.55,3.18,Decantación natural
+Níspero,7.19,9.53,4.31,3.86,Reposo fermentativo previo
+Mango,2.72,10.02,3.9,3.55,Microondas controlado
+Lulo,9.39,9.15,4.41,3.11,Fermentación espontánea
+Plátano,1.83,14.52,3.76,0.72,Difusión osmótica
+Pera,0.67,8.84,3.88,3.13,Maceración rápida
+Frambuesa,1.63,6.83,3.73,3.87,Maceración rápida
+Sandía,7.45,17.92,3.11,1.01,Centrifugación
+Maracuyá,2.39,10.0,4.67,1.65,Fermentación previa
+Níspero,6.3,15.73,4.81,1.99,Liofilización parcial
+Maracuyá,0.67,12.56,4.86,1.53,Difusión osmótica
+Plátano,2.0,18.75,4.14,2.82,Liofilización parcial
+Toronja,5.85,12.27,3.09,1.67,Difusión osmótica
+Sandía,4.76,13.89,4.24,1.96,Osmosis inversa parcial
+Caqui,0.87,13.44,4.96,2.94,Licuado con agua
+Melón,6.19,15.18,3.82,0.99,Licuado con agua
+Kiwi,6.82,13.44,4.2,3.8,Vibración ultrasónica
+Durazno,4.43,7.67,4.42,3.02,Microondas controlado
+Guayabo,9.32,14.88,4.46,3.52,Osmosis inversa parcial
+Piña,5.47,15.18,4.44,2.88,Congelación-descongelación
+Coco,9.72,8.78,4.76,3.41,Vibración ultrasónica
+Fresa,1.9,16.05,3.67,3.9,Lixiviación
+Durazno,9.6,14.77,3.98,3.08,Microondas controlado
+Frambuesa,2.03,13.55,3.19,0.56,Maceración lenta
+Mandarina,8.93,12.01,4.73,1.47,Osmosis inversa parcial
+Maracuyá,0.59,6.02,4.38,2.18,Vapor indirecto
+Limón,0.65,14.3,3.92,3.03,Prensado hidráulico
+Tamarindo,8.04,7.11,4.62,1.35,Osmosis inversa parcial
+Higo,3.83,18.59,3.87,2.77,Licuado con agua
+Chirimoya,2.11,9.14,3.48,1.9,Maceración lenta
+Frambuesa,4.88,17.6,3.59,1.79,Centrifugación
+Cacao,3.12,18.25,3.51,3.32,Extracción térmica
+Borojó,9.06,15.37,4.69,1.32,Liofilización parcial
+Mandarino,6.16,19.7,4.73,0.7,Deshidratación solar
+Manzana,1.37,15.49,3.3,0.84,Maceración lenta
+Banano,1.89,12.76,4.39,2.22,Prensado hidráulico
+Piña,3.97,9.47,4.91,1.45,Centrifugación
+Fresa,8.76,6.12,4.51,3.68,Fermentación espontánea
+Arándano,4.77,16.53,4.24,2.63,Filtrado con gas CO₂
+Papaya,2.05,11.46,4.23,0.74,Maceración rápida
+Tamarindo,5.4,8.45,4.83,1.07,Agitación constante
+Banano,0.81,17.73,3.48,3.15,Extracción térmica
+Cereza,9.42,6.85,4.23,3.18,Vapor indirecto
+Caqui,4.0,13.26,4.3,1.82,Licuado con agua
+Banano,1.16,15.29,4.91,1.87,Microfiltración
+Kiwi,8.07,15.62,3.84,2.82,Congelación-descongelación
+Piña,5.32,10.6,3.67,0.54,Maceración rápida
+Papayuela,4.6,16.29,4.57,3.86,Liofilización parcial
+Maracuyá,9.89,17.73,4.71,1.31,Filtrado con gas CO₂
+Zapote,2.71,13.65,3.01,2.89,Fermentación previa
+Pera,4.82,18.14,4.56,2.63,Evaporación controlada
+Anón,6.36,14.21,3.2,1.06,Fermentación previa
+Frambuesa,8.94,11.03,3.99,0.96,Difusión térmica
+Caqui,1.65,6.96,4.74,1.84,Agitación constante
+Mango,8.34,10.06,4.81,2.97,Maceración alcohólica leve
+Mandarino,6.65,17.2,4.99,2.85,Evaporación controlada
+Mango,6.28,12.72,3.89,1.1,Microondas controlado
+Carambola,5.53,15.11,4.16,1.36,Decantación natural
+Lulo,1.03,12.99,4.42,1.16,Lixiviación
+Anón,4.29,12.21,4.7,0.82,Filtrado con gas CO₂
+Mango,5.61,7.68,3.15,1.28,Prensado hidráulico
+Cacao,5.69,17.41,4.06,3.26,Filtrado con gas CO₂
+Arándano,0.7,16.52,4.5,3.79,Filtrado con gas CO₂
+Melón,5.04,15.74,4.06,3.72,Decocción corta
+Mora,7.65,12.31,4.25,1.29,Microondas controlado
+Caimito,8.02,14.19,4.72,2.97,Maceración alcohólica leve
+Carambola,3.0,7.04,4.98,3.19,Evaporación controlada
+Granadilla,2.91,7.27,4.87,3.26,Filtrado con gas CO₂
+Caimito,2.7,6.21,3.14,3.82,Fermentación previa
+Arándano,3.39,16.0,3.3,0.54,Extracción térmica
+Papayuela,2.33,10.85,4.32,3.07,Osmosis inversa parcial
+Arándano,7.4,10.43,3.65,3.58,Maceración lenta
+Mandarino,6.54,16.4,3.78,1.11,Prensado mecánico
+Coco,7.4,14.33,3.74,3.91,Lixiviación
+Guanábana,7.56,13.73,4.21,3.58,Agitación constante
+Granadilla,0.89,18.41,4.42,3.07,Liofilización parcial
+Mandarino,4.02,17.92,4.57,2.69,Homogeneización mecánica
+Pera,6.3,14.18,3.87,2.87,Agitación constante
+Guayabo,7.58,18.49,4.96,2.15,Decocción corta
+Durazno,9.84,8.12,3.35,2.96,Fermentación previa
+Caqui,2.22,11.48,3.21,1.22,Centrifugación
+Caqui,6.13,14.04,3.19,0.77,Extracción térmica
+Caqui,3.27,8.34,3.43,1.84,Prensado mecánico
+Fresa,3.69,6.96,4.03,2.19,Maceración rápida
+Maracuyá,4.96,8.14,4.24,3.38,Osmosis inversa parcial
+Pera,5.26,11.3,3.66,2.59,Maceración lenta
+Piña,0.91,14.26,4.09,1.48,Reposo fermentativo previo
+Pomelo,9.64,9.14,3.52,2.04,Centrifugación
+Mandarina,8.79,9.65,3.09,1.26,Maceración rápida
+Papaya,3.77,9.1,4.22,1.65,Centrifugación
+Mango,5.4,15.87,4.87,2.84,Decantación natural
+Anón,4.9,6.96,4.65,1.18,Centrifugación
+Fresa,7.98,7.17,3.56,3.3,Lixiviación
+Chirimoya,2.08,12.97,3.26,2.98,Maceración lenta
+Zapote,0.61,14.9,3.18,0.86,Prensado en frío
+Marolo,3.17,12.79,3.94,3.48,Osmosis inversa parcial
+Toronja,0.55,14.24,3.9,2.11,Centrifugación
+Maracuyá,2.44,19.43,4.82,0.68,Deshidratación solar
+Zapote,6.81,12.61,4.16,2.94,Microondas controlado
+Kiwi,6.58,9.67,4.22,3.78,Osmosis inversa parcial
+Manzana,7.92,19.96,3.45,2.16,Maceración rápida
+Mandarina,7.67,19.86,4.59,2.47,Liofilización parcial
+Marolo,3.37,15.15,4.89,1.58,Decantación natural
+Granadilla,5.99,15.66,4.66,1.46,Congelación-descongelación
+Higo,2.97,17.08,4.62,1.93,Microfiltración
+Marolo,2.89,15.79,3.34,3.97,Maceración rápida
+Coco,2.83,12.69,3.79,1.18,Extracción térmica
+Cacao,5.61,10.89,3.16,1.53,Lixiviación
+Zapote,3.96,18.42,4.75,2.15,Deshidratación solar
+Mango,9.9,16.64,3.19,2.66,Fermentación previa
+Manzana,3.68,18.27,4.98,3.04,Decantación natural
+Cacao,5.47,6.71,4.39,3.58,Reposo fermentativo previo
+Limón,2.65,14.7,3.52,3.51,Extracción térmica
+Caqui,7.48,19.45,3.61,2.67,Maceración rápida
+Uva,8.69,9.39,3.77,1.65,Fermentación previa
+Limón,5.24,12.55,3.29,2.52,Maceración rápida
+Melón,6.66,10.39,3.8,0.85,Fermentación espontánea
+Papayuela,5.5,13.45,3.42,1.01,Prensado hidráulico
+Arándano,5.52,12.09,3.18,4.0,Lixiviación
+Naranja,2.54,13.07,3.04,3.21,Maceración rápida
+Caqui,1.6,18.49,4.32,0.53,Microfiltración
+Borojó,1.26,19.81,3.78,0.78,Prensado en frío
+Chirimoya,9.23,17.38,3.6,1.59,Lixiviación
+Guanábana,4.74,12.88,3.24,3.9,Lixiviación
+Naranja,2.2,6.54,3.76,1.54,Lixiviación
+Frambuesa,1.85,19.41,3.81,2.66,Decocción corta
+Cereza,8.11,6.33,3.11,1.87,Extracción térmica
+Ciruela,6.52,6.48,4.16,3.56,Reposo fermentativo previo
+Piña,3.02,14.25,4.48,1.33,Fermentación previa
+Lulo,8.77,13.69,3.88,1.99,Fermentación espontánea
+Camu camu,2.26,14.19,3.46,0.78,Maceración lenta
+Caimito,7.18,8.37,3.27,2.46,Prensado hidráulico
+Pitahaya,3.82,18.18,4.15,1.43,Microfiltración
+Ciruela,5.57,7.28,3.87,3.31,Reposo fermentativo previo
+Tamarindo,3.1,13.62,4.88,2.41,Centrifugación
+Guayaba,7.15,16.65,4.18,1.18,Decantación natural
+Kiwi,0.56,7.46,3.79,3.78,Prensado en frío
+Zapote,1.88,7.35,4.62,0.53,Extracción térmica
+Piña,6.27,18.4,3.7,1.61,Maceración rápida
+Feijoa,1.1,12.87,4.31,2.37,Microondas controlado
+Mango,2.18,10.34,3.11,0.61,Difusión osmótica
+Papaya,7.47,13.65,3.55,2.85,Lixiviación
+Mandarina,8.8,7.64,3.48,2.15,Prensado hidráulico
+Manzana,1.76,13.73,4.42,3.28,Deshidratación solar
+Caqui,9.16,13.68,3.15,1.49,Extracción térmica
+Coco,6.57,6.01,4.14,3.76,Microondas controlado
+Papayuela,7.82,18.69,4.12,1.76,Licuado con agua
+Guayaba,2.54,10.06,3.52,2.16,Prensado hidráulico
+Marolo,1.62,7.48,3.42,2.32,Extracción térmica
+Papaya,9.71,8.29,3.58,0.57,Lixiviación
+Arándano,6.98,6.69,4.45,1.72,Difusión térmica
+Marolo,5.5,10.1,3.65,0.58,Prensado hidráulico
+Ciruela,3.2,7.09,3.52,1.84,Prensado hidráulico
+Arazá,7.16,15.88,4.95,3.07,Evaporación controlada
+Manzana,7.08,6.1,3.94,1.21,Difusión lenta
+Piña,3.17,12.68,3.23,3.75,Prensado hidráulico
+Arándano,3.5,6.57,3.92,2.79,Licuado con agua
+Guanábana,2.91,7.01,4.87,1.51,Congelación-descongelación
+Caimito,2.19,8.14,3.66,2.26,Maceración lenta
+Pera,0.69,9.52,4.47,0.94,Congelación-descongelación
+Toronja,6.52,11.19,4.77,0.61,Reposo fermentativo previo
+Anón,4.62,7.31,4.92,2.14,Lixiviación
+Banano,6.67,11.82,3.74,2.77,Prensado hidráulico
+Ciruela,7.46,10.2,4.8,1.5,Difusión lenta
+Carambola,6.81,17.48,3.65,0.9,Difusión osmótica
+Copoazú,8.82,16.14,4.92,2.19,Deshidratación solar
+Chirimoya,3.77,18.49,4.48,2.9,Microfiltración
+Limón,1.83,18.06,4.0,2.79,Filtrado con gas CO₂
+Feijoa,7.2,13.34,3.66,3.53,Prensado mecánico
+Guayaba,7.63,7.87,3.86,0.5,Fermentación espontánea
+Sandía,9.35,12.02,4.93,0.79,Fermentación espontánea
+Durazno,5.21,12.93,3.15,3.71,Centrifugación
+Guayabo,8.29,19.48,3.1,0.57,Difusión osmótica
+Arándano,9.49,15.46,3.48,2.28,Fermentación previa
+Marolo,6.48,12.08,4.82,2.89,Difusión térmica
+Limón,7.38,9.06,4.9,2.17,Osmosis inversa parcial
+Coco,2.54,9.41,3.56,3.91,Prensado en frío
+Piña,8.84,12.52,3.86,2.38,Difusión lenta
+Melón,9.27,19.92,4.15,1.15,Evaporación controlada
+Marolo,1.37,8.67,4.26,3.02,Filtrado con gas CO₂
+Camu camu,3.63,16.7,4.97,0.75,Decocción corta
+Caqui,7.39,10.66,3.28,3.97,Prensado en frío
+Copoazú,0.6,13.91,4.94,1.14,Agitación constante
+Frambuesa,4.28,17.03,4.93,3.49,Microfiltración
+Pomelo,5.01,18.93,4.36,1.22,Microfiltración
+Camu camu,7.55,12.71,3.51,3.84,Prensado mecánico
+Chirimoya,6.49,14.22,4.03,2.6,Fermentación espontánea
+Caimito,4.3,8.69,4.53,2.8,Fermentación espontánea
+Lulo,0.65,17.85,3.81,0.61,Homogeneización mecánica
+Caqui,5.38,10.03,4.73,2.65,Vibración ultrasónica
+Arándano,3.11,13.95,5.0,1.45,Agitación constante
+Fresa,6.99,11.63,3.17,2.58,Difusión osmótica
+Banano,1.87,11.36,4.21,3.9,Deshidratación solar
+Maracuyá,4.81,13.99,3.32,1.84,Lixiviación
+Plátano,3.19,13.14,4.26,3.99,Decocción corta
+Pomelo,9.44,14.29,4.65,1.33,Osmosis inversa parcial
+Cacao,3.31,12.99,4.29,3.14,Decocción corta
+Coco,1.95,7.52,3.28,3.21,Prensado hidráulico
+Guanábana,8.35,10.35,4.61,0.57,Vapor indirecto
+Anón,8.31,18.1,3.73,1.32,Lixiviación
+Arazá,2.11,9.56,4.49,3.49,Vibración ultrasónica
+Naranja,2.45,11.04,3.34,3.09,Maceración rápida
+Camu camu,3.97,11.17,3.61,1.73,Maceración lenta
+Limón,0.93,18.62,3.8,0.57,Liofilización parcial
+Naranja,8.25,19.81,4.3,0.68,Licuado con agua
+Guayabo,1.57,20.0,4.88,3.26,Decocción corta
+Lulo,3.45,11.08,4.64,2.45,Prensado en frío
+Mandarino,7.95,7.22,4.78,2.88,Fermentación espontánea
+Arazá,4.3,18.48,4.33,1.54,Microfiltración
+Pera,3.25,12.94,3.79,1.24,Maceración lenta
+Ciruela,3.88,16.75,3.37,1.3,Fermentación previa
+Naranja,1.33,7.18,3.9,3.85,Maceración rápida
+Cacao,0.95,17.27,3.67,1.44,Maceración lenta
+Mandarino,9.95,6.36,4.13,2.52,Difusión térmica
+Durazno,1.67,11.39,3.2,1.55,Maceración rápida
+Pomelo,4.24,19.36,4.43,3.93,Decocción corta
+Manzana,2.89,17.16,3.95,3.4,Evaporación controlada
+Caqui,8.61,10.22,3.03,3.09,Maceración rápida
+Sandía,8.26,18.28,4.59,2.77,Deshidratación solar
+Manzana,6.25,10.11,3.02,2.79,Lixiviación
+Tamarindo,9.92,17.85,4.24,1.93,Deshidratación solar
+Arazá,5.57,11.78,4.02,3.26,Agitación constante
+Tamarindo,9.7,8.83,3.76,1.24,Extracción térmica
+Pera,3.83,6.82,3.9,3.72,Reposo fermentativo previo
+Durazno,5.28,10.59,3.92,3.65,Microondas controlado
+Guayabo,8.46,15.28,3.77,3.53,Centrifugación
+Caqui,3.77,17.65,4.38,2.26,Filtrado con gas CO₂
+Manzana,4.95,15.22,4.05,3.95,Licuado con agua
+Mandarina,7.86,7.97,3.07,1.25,Fermentación previa
+Aguacate,2.04,17.78,3.67,3.12,Centrifugación
+Zapote,3.89,8.78,3.93,2.27,Liofilización parcial
+Caimito,7.29,10.02,4.54,2.96,Microondas controlado
+Plátano,0.57,13.53,3.88,2.96,Lixiviación
+Lulo,2.98,10.66,3.96,3.32,Agitación constante
+Papaya,8.79,15.8,4.0,2.47,Evaporación controlada
+Toronja,4.6,8.72,3.44,3.34,Centrifugación
+Mandarina,2.51,12.73,4.37,4.0,Microfiltración
+Aguacate,9.13,14.16,4.39,2.15,Agitación constante
+Lulo,7.49,15.12,4.84,3.06,Decantación natural
+Uva,8.28,7.79,4.71,1.88,Vapor indirecto
+Guayaba,4.87,7.35,3.03,2.34,Centrifugación
+Caqui,8.61,18.2,3.51,1.18,Centrifugación
+Camu camu,8.56,12.39,3.01,2.12,Prensado hidráulico
+Melón,4.27,7.3,4.01,3.79,Congelación-descongelación
+Durazno,1.0,6.12,3.09,3.13,Prensado hidráulico
+Aguacate,6.41,6.76,4.79,1.01,Reposo fermentativo previo
+Pera,5.93,12.57,3.54,3.47,Difusión osmótica
+Durazno,8.23,18.21,4.8,2.23,Congelación-descongelación
+Mandarina,9.86,8.17,3.76,0.91,Maceración lenta
+Fresa,8.57,18.63,4.44,3.73,Liofilización parcial
+Aguacate,0.65,8.08,3.04,3.85,Prensado en frío
+Carambola,4.32,17.17,4.01,2.8,Filtrado con gas CO₂
+Arazá,7.46,17.75,4.78,1.99,Filtrado con gas CO₂
+Fresa,1.61,10.4,3.62,3.54,Fermentación previa
+Naranja,2.01,6.78,4.46,0.62,Decocción corta
+Pera,1.31,10.31,4.11,2.44,Licuado con agua
+Naranja,6.92,13.15,4.63,2.35,Fermentación espontánea
+Plátano,0.88,11.38,4.38,2.14,Fermentación previa
+Durazno,1.9,10.86,3.21,3.25,Centrifugación
+Banano,5.09,8.36,4.26,3.76,Microondas controlado
+Plátano,5.47,16.51,3.07,0.58,Maceración lenta
+Higo,6.96,8.39,4.24,3.97,Difusión térmica
+Guayaba,8.1,14.51,3.35,2.0,Maceración rápida
+Mango,8.33,14.11,4.53,3.08,Difusión lenta
+Borojó,4.89,14.08,3.34,3.33,Maceración rápida
+Sandía,9.24,6.9,4.21,2.09,Fermentación espontánea
+Pomelo,8.02,14.53,4.42,0.89,Maceración alcohólica leve
+Coco,5.39,18.5,4.96,1.29,Microfiltración
+Tamarindo,9.75,11.58,4.59,3.87,Reposo fermentativo previo
+Granadilla,9.98,9.08,3.9,2.74,Vapor indirecto
+Mora,8.23,18.42,3.69,3.25,Prensado mecánico
+Pomelo,9.0,8.8,4.37,0.88,Maceración alcohólica leve
+Ciruela,9.54,8.07,4.39,3.67,Agitación constante
+Frambuesa,1.16,7.7,4.6,3.19,Reposo fermentativo previo
+Mandarina,5.46,16.8,3.58,3.18,Fermentación previa

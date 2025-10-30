@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container mt-5">
+    <h2>Resultado de Predicción</h2>
+    <hr>
+
+    <p><strong>Fruta:</strong> {{ fruta }}</p>
+    <p><strong>Cantidad:</strong> {{ cantidad }} ml</p>
+    <p><strong>Técnica Recomendada:</strong> {{ tecnica_predicha }}</p>
+
+    {% if tecnica_info %}
+    <hr>
+    <h4>Ficha Técnica de la Técnica "{{ tecnica_predicha }}"</h4>
+
+    <p><strong>Descripción:</strong> {{ tecnica_info['Descripcion'] }}</p>
+    <p><strong>Tiempo Estimado:</strong> {{ tecnica_info['Tiempo_estimado'] }}</p>
+    <p><strong>Temperatura Óptima:</strong> {{ tecnica_info['Temperatura_optima'] }}</p>
+    <p><strong>Herramientas:</strong> {{ tecnica_info['Herramientas'] }}</p>
+    <p><strong>Implementación Detallada:</strong> {{ tecnica_info['Implementacion_detallada'] }}</p>
+    <p><strong>Recomendaciones Finales:</strong> {{ tecnica_info['Recomendaciones_finales'] }}</p>
+    {% endif %}
+
+    <a href="{{ url_for('predict') }}" class="btn btn-secondary mt-3">Volver</a>
+</div>
+
+{% endblock %}
