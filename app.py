@@ -48,12 +48,12 @@ def create_app():
         with open(MODEL_PATH, "rb") as f:
             sugar_model, encoder = pickle.load(f)
         tech_df = pd.read_csv(DATASET_PATH)
-        print("Modelo ML y datasheet cargados correctamente.")
+        print("✅ Modelo ML y datasheet cargados correctamente.")
     except Exception as e:
-        print(f"Error cargando modelo o datasheet: {e}")
+        print(f"⚠️ Error cargando modelo o datasheet: {e}")
 
     # =========================================================
-    # RUTAS DEL SISTEMA ORIGINAL
+    # RUTAS DEL SISTEMA
     # =========================================================
 
     @app.route('/')
@@ -71,7 +71,7 @@ def create_app():
     @app.route('/login', methods=['GET', 'POST'])
     def login():
         if current_user.is_authenticated:
-            return redirect(url_for('login'))
+            return redirect(url_for('dashboard'))
 
         if request.method == 'POST':
             email = request.form.get('email')
@@ -153,47 +153,72 @@ def create_app():
         return render_template('pedido.html')
 
     # =========================================================
-    # RUTA DE PREDICCIÓN (KÉFIR)
+    # PREDICCIÓN DE CALIDAD Y TÉCNICA
     # =========================================================
     @app.route('/predict', methods=['GET', 'POST'])
     @login_required
     def predict():
-        frutas = encoder.categories_[0] if encoder is not None else []
+        frutas = [
+            "manzana", "pera", "uva", "mango", "fresa", "piña", "banano", "kiwi", "papaya", "melón",
+            "sandía", "cereza", "maracuyá", "guayaba", "mora", "naranja", "limón", "mandarina", "coco",
+            "durazno", "granadilla", "toronja", "guanábana", "pitahaya", "lulo", "arándano", "frambuesa",
+            "tamarindo", "pomarrosa", "uchuva", "cacao", "aguacate", "mamey", "chontaduro", "higo",
+            "ciruela", "níspero", "mangostino", "zapote", "carambola", "melocotón", "mango tommy",
+            "pera de agua", "uva isabelina", "noni", "guayabo", "caimito", "pitanga", "cereza negra", "mora de castilla"
+        ]
 
         if request.method == 'POST':
-            fruta = request.form.get('fruta')
-            cantidad = request.form.get('cantidad')
+            fruta = request.form['fruta']
+            cantidad = float(request.form['cantidad'])
+            azucar = float(request.form.get('azucar', 0))
+            temperatura = float(request.form.get('temperatura', 25))
+            tiempo = float(request.form.get('tiempo', 12))
+            madurez = request.form.get('madurez', 'maduro')
+            congelado = request.form.get('congelado', 'no')
+            metodo = request.form.get('metodo', 'manual')
 
-            if not fruta or not cantidad:
-                flash("Debe seleccionar una fruta y una cantidad válida.", "danger")
-                return redirect(url_for('predict'))
+            # ====== MAPEAR MADUREZ A VALOR NUMÉRICO ======
+            madurez_map = {"verde": 0, "maduro": 1, "muy_maduro": 2}
+            madurez_val = madurez_map.get(madurez, 1)
 
-            try:
-                cantidad = float(cantidad)
-                fruta_vector = np.array([[fruta]])
-                fruta_encoded = encoder.transform(fruta_vector).toarray()
-                entrada = np.concatenate([fruta_encoded, np.array([[cantidad]])], axis=1)
+            # ====== SIMULACIÓN DE CALIDAD ======
+            calidad = 100
+            calidad -= abs(temperatura - 26) * 2
+            calidad -= abs(tiempo - 12) * 3
+            calidad -= abs(azucar - 10) * 1.5
+            if madurez_val < 1:
+                calidad -= 10
+            if congelado.lower() in ["sí", "si"]:
+                calidad -= 10
 
-                tecnica_predicha = sugar_model.predict(entrada)[0]
+            calidad = max(0, min(100, calidad))
 
-                # Buscar información técnica
-                info = tech_df[tech_df['Tecnica_recomendada'] == tecnica_predicha]
-                ficha = info.to_dict('records')[0] if not info.empty else None
+            # ====== RECOMENDACIÓN DE TÉCNICA ======
+            tecnica_predicha = None
+            tecnica_info = None
+            if calidad < 70:
+                df = pd.read_csv('techniques_datasheet.csv')
+                tecnica_predicha = np.random.choice(df["Tecnica_recomendada"])
+                tecnica_info = df[df["Tecnica_recomendada"] == tecnica_predicha].iloc[0].to_dict()
 
-                return render_template(
-                    'result.html',
-                    fruta=fruta,
-                    cantidad=cantidad,
-                    tecnica_predicha=tecnica_predicha,
-                    tecnica_info=ficha
-                )
-
-            except Exception as e:
-                flash(f"Error en la predicción: {e}", "danger")
-                return redirect(url_for('predict'))
+            # ====== RENDERIZAR RESULTADO ======
+            return render_template(
+                'result.html',
+                fruta=fruta,
+                cantidad=cantidad,
+                azucar=azucar,
+                temperatura=temperatura,
+                tiempo=tiempo,
+                madurez=madurez,
+                congelado=congelado,
+                metodo=metodo,
+                calidad=calidad,
+                tecnica_predicha=tecnica_predicha,
+                tecnica_info=tecnica_info
+            )
 
         return render_template('predict.html', frutas=frutas)
-
+    
     return app
 
 

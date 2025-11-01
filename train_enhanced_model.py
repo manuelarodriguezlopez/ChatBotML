@@ -1,46 +1,62 @@
 import pandas as pd
+from sklearn.preprocessing import OneHotEncoder
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.compose import ColumnTransformer
+from sklearn.pipeline import Pipeline
 import numpy as np
 import pickle
 import os
-from sklearn.preprocessing import OneHotEncoder
-from sklearn.ensemble import RandomForestClassifier
 
-# Cargar datos
-df = pd.read_csv("data/enhanced_techniques_datasheet.csv")
+# Dataset simulado de referencia
+df = pd.read_csv("techniques_datasheet.csv")
 
-# Simular frutas por categoría
-categorias = {
-    "blanda": ["mango", "fresa", "melón", "sandía", "durazno"],
-    "fibrosa": ["piña", "guayaba", "papaya", "chontaduro", "zapote"],
-    "cítrica": ["naranja", "limón", "mandarina", "toronja", "maracuyá"],
-    "seca": ["higo", "uva pasa", "coco", "mamey", "níspero"]
-}
+# Frutas y categorías
+frutas = ["piña", "fresa", "mango", "manzana", "guayaba", "naranja", "uva", "maracuyá"]
+madurez = ["verde", "media", "madura"]
+metodos = ["directa", "maceración lenta", "infusionada"]
 
-X, y = [], []
-for _, row in df.iterrows():
-    tipo = row["Tipo_fruta_adecuado"]
-    frutas_tipo = categorias[tipo]
-    rango = row["Rango_cantidad_ml"].split("-")
-    min_ml, max_ml = int(rango[0]), int(rango[1])
-    for fruta in frutas_tipo:
-        for _ in range(15):
-            cantidad = np.random.randint(min_ml, max_ml)
-            X.append([fruta, cantidad])
-            y.append(row["Tecnica_recomendada"])
+# Generar dataset artificial de entrenamiento
+np.random.seed(42)
+data = []
+for fruta in frutas:
+    for _ in range(20):
+        registro = {
+            "Fruta": fruta,
+            "Cantidad": np.random.randint(200, 2000),
+            "Concentracion_azucar": np.random.uniform(40, 100),
+            "Temperatura": np.random.uniform(20, 30),
+            "Tiempo_fermentacion": np.random.uniform(8, 48),
+            "Grado_madurez": np.random.choice(madurez),
+            "Tiempo_congelado": np.random.uniform(0, 6),
+            "Metodo": np.random.choice(metodos),
+            "Tecnica_recomendada": np.random.choice(df["Tecnica_recomendada"])
+        }
+        data.append(registro)
 
-X_df = pd.DataFrame(X, columns=["Fruta", "Cantidad"])
-y_df = pd.Series(y, name="Tecnica")
+dataset = pd.DataFrame(data)
 
-# Codificador y modelo
-encoder = OneHotEncoder(handle_unknown='ignore')
-X_encoded = encoder.fit_transform(X_df[["Fruta"]]).toarray()
-X_final = np.concatenate([X_encoded, X_df[["Cantidad"]].values], axis=1)
+# Variables y salida
+X = dataset.drop(columns=["Tecnica_recomendada"])
+y = dataset["Tecnica_recomendada"]
 
-model = RandomForestClassifier(n_estimators=150, random_state=42)
-model.fit(X_final, y_df)
+# Codificación y modelo
+categorical_features = ["Fruta", "Grado_madurez", "Metodo"]
+numeric_features = ["Cantidad", "Concentracion_azucar", "Temperatura", "Tiempo_fermentacion", "Tiempo_congelado"]
 
+encoder = ColumnTransformer([
+    ("categorical", OneHotEncoder(handle_unknown="ignore"), categorical_features)
+], remainder='passthrough')
+
+model = Pipeline([
+    ("encoder", encoder),
+    ("classifier", RandomForestClassifier(n_estimators=150, random_state=42))
+])
+
+model.fit(X, y)
+
+# Guardar modelo
 os.makedirs("models", exist_ok=True)
 with open("models/sugar_kef_model.pkl", "wb") as f:
-    pickle.dump((model, encoder), f)
+    pickle.dump(model, f)
 
-print("Modelo mejorado entrenado y guardado correctamente.")
+print(" Modelo actualizado con variables experimentales guardado en models/sugar_kef_model.pkl")

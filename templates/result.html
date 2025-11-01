@@ -1,26 +1,121 @@
 {% extends 'base.html' %}
-{% block title %}Resultado | SUGAR KEF{% endblock %}
+{% block title %}Resultado de Predicción | SUGAR KEF{% endblock %}
 {% block content %}
 
-<h2 class="section-title mb-4 text-center"><i class="bi bi-bar-chart"></i> Resultado de Predicción</h2>
+<div class="container mt-5">
 
-<div class="card p-4 mx-auto" style="max-width: 700px;">
-  <p><strong>Fruta:</strong> {{ fruta }}</p>
-  <p><strong>Cantidad:</strong> {{ cantidad }} ml</p>
-  <p><strong>Técnica Recomendada:</strong> {{ tecnica_predicha }}</p>
+  <!-- Encabezado -->
+  <div class="text-center mb-5">
+    <h2 class="fw-bold text-primary">
+      <i class="bi bi-graph-up-arrow"></i> Resultado de Predicción
+    </h2>
+    <p class="text-muted">Análisis del producto según las condiciones ingresadas.</p>
+  </div>
 
-  {% if tecnica_info %}
-  <hr>
-  <h4 class="text-primary fw-bold">Ficha Técnica: {{ tecnica_predicha }}</h4>
-  <p><strong>Descripción:</strong> {{ tecnica_info['Descripcion'] }}</p>
-  <p><strong>Tiempo Estimado:</strong> {{ tecnica_info['Tiempo_estimado'] }}</p>
-  <p><strong>Temperatura Óptima:</strong> {{ tecnica_info['Temperatura_optima'] }}</p>
-  <p><strong>Herramientas:</strong> {{ tecnica_info['Herramientas'] }}</p>
-  <p><strong>Implementación Detallada:</strong> {{ tecnica_info['Implementacion_detallada'] }}</p>
-  <p><strong>Recomendaciones Finales:</strong> {{ tecnica_info['Recomendaciones_finales'] }}</p>
+  <!-- Tarjeta principal -->
+  <div class="card shadow-lg border-0 rounded-4 p-4 mb-4">
+    <div class="row g-4 align-items-center">
+
+      <!-- Columna izquierda -->
+      <div class="col-md-6">
+        <h5 class="fw-bold text-primary mb-3"><i class="bi bi-clipboard2-data"></i> Detalles del producto</h5>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><strong>Fruta:</strong> {{ fruta|capitalize }}</li>
+          <li class="list-group-item"><strong>Cantidad:</strong> {{ cantidad }} ml</li>
+          <li class="list-group-item"><strong>Nivel de azúcar:</strong> {{ azucar }} °Brix</li>
+          <li class="list-group-item"><strong>Temperatura:</strong> {{ temperatura }} °C</li>
+          <li class="list-group-item"><strong>Tiempo de fermentación:</strong> {{ tiempo }} h</li>
+          <li class="list-group-item"><strong>Grado de madurez:</strong> {{ madurez|replace("_", " ")|capitalize }}</li>
+          <li class="list-group-item"><strong>Fruta congelada:</strong> {{ "Sí" if congelado == "si" else "No" }}</li>
+          <li class="list-group-item"><strong>Método:</strong> {{ metodo|capitalize }}</li>
+        </ul>
+      </div>
+
+      <!-- Columna derecha: Medidor -->
+      <div class="col-md-6 text-center">
+        <h5 class="fw-bold text-primary mb-3"><i class="bi bi-speedometer2"></i> Calidad del Producto</h5>
+
+        <!-- Indicador circular -->
+        <div class="position-relative d-inline-block mb-3">
+          <svg width="160" height="160" viewBox="0 0 36 36" class="circular-chart">
+            {% set color = (
+                '#28a745' if calidad == 'Excelente' else
+                '#17a2b8' if calidad == 'Buena' else
+                '#ffc107' if calidad == 'Regular' else
+                '#dc3545'
+            ) %}
+            <path class="circle-bg" d="M18 2.0845
+              a 15.9155 15.9155 0 0 1 0 31.831
+              a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#eee" stroke-width="3"/>
+            <path class="circle"
+              stroke="{{ color }}"
+              stroke-width="3"
+              stroke-dasharray="{{ calidad_score }}, 100"
+              d="M18 2.0845
+              a 15.9155 15.9155 0 0 1 0 31.831
+              a 15.9155 15.9155 0 0 1 0 -31.831"
+              fill="none" />
+            <text x="18" y="20.35" class="percentage" text-anchor="middle" font-size="8" fill="{{ color }}">
+              {{ calidad_score }}%
+            </text>
+          </svg>
+        </div>
+
+        <h4 class="fw-bold" style="color: {{ color }};">{{ calidad }}</h4>
+      </div>
+    </div>
+  </div>
+
+  <!-- Técnica predicha -->
+  <div class="card shadow-sm border-0 rounded-4 p-4 mb-4">
+    <h4 class="fw-bold text-primary mb-3">
+      <i class="bi bi-tools"></i> Técnica Sugerida para Optimización
+    </h4>
+    <p><strong>Técnica detectada:</strong> {{ tecnica_predicha }}</p>
+
+    <div class="mt-3">
+      <p><strong>Descripción:</strong> {{ tecnica_info['Descripcion'] }}</p>
+      <p><strong>Tiempo Estimado:</strong> {{ tecnica_info['Tiempo_estimado'] }}</p>
+      <p><strong>Temperatura Óptima:</strong> {{ tecnica_info['Temperatura_optima'] }}</p>
+      <p><strong>Herramientas:</strong> {{ tecnica_info['Herramientas'] }}</p>
+      <p><strong>Implementación:</strong> {{ tecnica_info['Implementacion_detallada'] }}</p>
+      <p><strong>Recomendaciones:</strong> {{ tecnica_info['Recomendaciones_finales'] }}</p>
+    </div>
+  </div>
+
+  <!-- Si la calidad fue baja -->
+  {% if tecnica_recomendada %}
+  <div class="card border-danger shadow-sm rounded-4 p-4 mb-4">
+    <h4 class="fw-bold text-danger mb-3">
+      <i class="bi bi-exclamation-triangle"></i> Recomendación Correctiva
+    </h4>
+    <p>El producto presenta una calidad <strong>{{ calidad }}</strong>. Te sugerimos aplicar la siguiente técnica para mejorar su fermentación:</p>
+
+    <div class="mt-3">
+      <p><strong>Técnica Alternativa:</strong> {{ tecnica_recomendada['Tecnica_recomendada'] }}</p>
+      <p><strong>Descripción:</strong> {{ tecnica_recomendada['Descripcion'] }}</p>
+      <p><strong>Recomendaciones:</strong> {{ tecnica_recomendada['Recomendaciones_finales'] }}</p>
+    </div>
+  </div>
   {% endif %}
 
-  <a href="{{ url_for('predict') }}" class="btn btn-outline-primary mt-3"><i class="bi bi-arrow-left"></i> Volver</a>
+  <!-- Botón volver -->
+  <div class="text-center mt-4">
+    <a href="{{ url_for('predict') }}" class="btn btn-secondary px-4 fw-semibold">
+      <i class="bi bi-arrow-left-circle"></i> Volver al Modelo
+    </a>
+  </div>
+
 </div>
+
+<!-- Estilos extra -->
+<style>
+.circular-chart {
+  transform: rotate(-90deg);
+}
+.circle {
+  transition: stroke-dasharray 1s ease;
+}
+</style>
 
 {% endblock %}

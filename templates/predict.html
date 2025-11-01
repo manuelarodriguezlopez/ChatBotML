@@ -1,36 +1,113 @@
 {% extends 'base.html' %}
-{% block title %}Predicción | SUGAR KEF{% endblock %}
+{% block title %}Modelo de Predicción | SUGAR KEF{% endblock %}
 {% block content %}
 
-<h2 class="section-title mb-4 text-center"><i class="bi bi-cpu"></i> Predicción de Técnica para Elaborar Kéfir</h2>
+<div class="container mt-5">
+  <!-- Encabezado -->
+  <div class="text-center mb-5">
+    <h2 class="fw-bold text-primary">
+      <i class="bi bi-robot"></i> Modelo de Predicción SUGAR KEF
+    </h2>
+    <p class="text-muted">Completa la información para obtener la técnica óptima de fermentación.</p>
+  </div>
 
-{% with messages = get_flashed_messages(with_categories=true) %}
-  {% if messages %}
-    {% for category, message in messages %}
-      <div class="alert alert-{{ category }}">{{ message }}</div>
-    {% endfor %}
-  {% endif %}
-{% endwith %}
+  <!-- Tarjeta principal -->
+  <div class="card shadow-lg border-0 p-4 rounded-4">
+    <form method="POST" action="{{ url_for('predict') }}">
+      <div class="row g-3">
 
-<div class="card p-4 mx-auto" style="max-width: 500px;">
-  <form method="POST" action="{{ url_for('predict') }}">
-      <div class="mb-3">
-          <label for="fruta" class="form-label">Fruta base:</label>
+        <!-- Fruta -->
+        <div class="col-md-6">
+          <label class="form-label fw-semibold"><i class="bi bi-apple"></i> Fruta base</label>
           <select class="form-select" id="fruta" name="fruta" required>
-              <option value="">Seleccione una fruta...</option>
-              {% for fruta in frutas %}
-                  <option value="{{ fruta }}">{{ fruta|capitalize }}</option>
-              {% endfor %}
+            <option value="">Seleccione una fruta...</option>
+            {% for fruta in frutas %}
+            <option value="{{ fruta }}">{{ fruta|capitalize }}</option>
+            {% endfor %}
           </select>
+        </div>
+
+        <!-- Cantidad -->
+        <div class="col-md-6">
+          <label class="form-label fw-semibold"><i class="bi bi-beaker"></i> Cantidad (ml)</label>
+          <input type="number" class="form-control" id="cantidad" name="cantidad" min="50" step="50"
+            placeholder="Ej. 500" required>
+        </div>
+
+        <!-- Nivel de azúcar -->
+        <div class="col-md-6">
+          <label class="form-label fw-semibold"><i class="bi bi-cup-straw"></i> Nivel de azúcar (°Brix)</label>
+          <input type="number" class="form-control" id="azucar" name="azucar" min="0" max="40" step="0.1"
+            placeholder="Ej. 15">
+        </div>
+
+        <!-- Temperatura -->
+        <div class="col-md-6">
+          <label class="form-label fw-semibold"><i class="bi bi-thermometer-half"></i> Temperatura ambiente (°C)</label>
+          <input type="number" class="form-control" id="temperatura" name="temperatura" min="0" max="40" step="0.1"
+            placeholder="Ej. 25">
+        </div>
+
+        <!-- Tiempo de fermentación -->
+        <div class="col-md-6">
+          <label class="form-label fw-semibold"><i class="bi bi-clock-history"></i> Tiempo de fermentación
+            (horas)</label>
+          <input type="number" class="form-control" id="tiempo" name="tiempo" min="6" max="72" placeholder="Ej. 24">
+        </div>
+
+        <!-- Grado de madurez -->
+        <div class="col-md-6">
+          <label class="form-label fw-semibold"><i class="bi bi-brightness-alt-high"></i> Grado de madurez</label>
+          <select class="form-select" id="madurez" name="madurez" required>
+            <option value="">Seleccione una opción...</option>
+            <option value="verde">Verde</option>
+            <option value="poco_maduro">Poco Maduro</option>
+            <option value="semi_maduro">Semi Maduro</option>
+            <option value="maduro">Maduro</option>
+            <option value="muy_maduro">Muy Maduro</option>
+          </select>
+        </div>
+
+        <!-- Fruta congelada -->
+        <div class="col-md-6">
+          <label class="form-label fw-semibold"><i class="bi bi-snow"></i> ¿Fruta congelada?</label>
+          <select class="form-select" id="congelado" name="congelado">
+            <option value="no">No</option>
+            <option value="si">Sí</option>
+          </select>
+        </div>
+
+        <!-- Método de preparación -->
+        <div class="col-md-6">
+          <label class="form-label fw-semibold"><i class="bi bi-gear"></i> Método de preparación</label>
+          <select class="form-select" id="metodo" name="metodo">
+            <option value="">Seleccione...</option>
+            <option value="manual">Manual</option>
+            <option value="semiautomatico">Semiautomático</option>
+            <option value="industrial">Industrial</option>
+          </select>
+        </div>
       </div>
 
-      <div class="mb-3">
-          <label for="cantidad" class="form-label">Cantidad (ml):</label>
-          <input type="number" class="form-control" id="cantidad" name="cantidad" min="50" step="50" required>
+      <!-- Botón -->
+      <div class="text-center mt-4">
+        <button type="submit" class="btn btn-primary px-4 fw-semibold">
+          <i class="bi bi-play-circle"></i> Predecir Técnica
+        </button>
       </div>
+    </form>
+  </div>
 
-      <button type="submit" class="btn btn-primary w-100">Predecir Técnica</button>
-  </form>
+  <!-- Consejo -->
+  <div class="text-center mt-5">
+    <h5 class="fw-semibold text-dark mb-3">
+      <i class="bi bi-lightbulb"></i> Consejo del Día
+    </h5>
+    <p class="text-muted" style="max-width: 600px; margin: 0 auto;">
+      “Recuerda que el kéfir es un organismo vivo: su sabor y textura pueden variar con la temperatura
+      y el tiempo de fermentación. ¡Ajusta tus técnicas y mantén tu cultivo saludable!”
+    </p>
+  </div>
 </div>
 
 {% endblock %}
