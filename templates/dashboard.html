@@ -1,130 +1,89 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Panel Principal | SUGAR KEF</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% extends 'base.html' %}
+{% block title %}Panel Principal | SUGAR KEF{% endblock %}
+{% block content %}
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #f7fafc, #e9f3ff);
-      color: #212529;
-      padding-top: 80px;
-    }
-    .navbar {
-      background-color: #4B2074;
-    }
-    .navbar-brand {
-      font-weight: 700;
-      font-size: 1.4rem;
-    }
-    .section-title {
-      color: #4B2074;
-      font-weight: 700;
-    }
-    .info-card {
-      border: none;
-      border-radius: 20px;
-      background-color: #ffffff;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-      transition: 0.3s ease;
-    }
-    .info-card:hover {
-      transform: translateY(-5px);
-    }
-    .benefit-icon {
-      color: #F48C3F;
-      font-size: 2rem;
-    }
-    footer {
-      margin-top: 60px;
-      color: #6c757d;
-    }
-    .cta-section {
-      background-color: #F9C843;
-      color: #4B2074;
-      border-radius: 20px;
-      padding: 40px;
-    }
-  </style>
-</head>
+<div class="container mt-4">
+  <!-- Título principal -->
+  <h2 class="section-title text-center mb-4">
+    <i class="bi bi-speedometer2 text-primary"></i> Panel de Control
+  </h2>
 
-<body>
-  <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm">
-    <div class="container-fluid px-4">
-      <a class="navbar-brand" href="{{ url_for('dashboard') }}">
-        <i class="bi bi-droplet-half me-2"></i> SUGAR KEF
-      </a>
+  <p class="text-center text-muted mb-5">
+    Bienvenid@{% if current_user.is_authenticated %}, <strong>{{ current_user.name }}</strong>{% endif %}.
+    Aquí puedes acceder rápidamente a las principales funciones del sistema.
+  </p>
 
-      <div class="d-flex align-items-center">
-        <!-- Botón Inicio -->
-        <a href="{{ url_for('dashboard') }}" class="btn btn-outline-light btn-sm me-2">
-          <i class="bi bi-house-door"></i> Inicio
-        </a>
-
-        <!-- Botón para el modelo de predicción -->
-        <a href="{{ url_for('predict') }}" class="btn btn-warning btn-sm me-2 fw-semibold text-dark">
-          <i class="bi bi-robot"></i> Modelo de Predicción
-        </a>
-
-        <!-- Botón Empresa -->
-        <a href="{{ url_for('empresa') }}" class="btn btn-outline-light btn-sm me-2">
-          <i class="bi bi-building"></i> Empresa
-        </a>
-
-        <!-- Botón Pedido -->
-        <a href="{{ url_for('pedido') }}" class="btn btn-outline-light btn-sm me-2">
-          <i class="bi bi-bag"></i> Pedido
-        </a>
-
-        <!-- Botón Cerrar sesión -->
-        <a href="{{ url_for('logout') }}" class="btn btn-outline-light btn-sm">
-          <i class="bi bi-box-arrow-right"></i> Cerrar sesión
-        </a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- CONTENIDO -->
-  <div class="container mt-5 text-center">
-    <h2 class="mb-5 section-title"><i class="bi bi-building"></i> Bienvenido a tu Panel SUGAR KEF</h2>
-
-    <div class="card info-card p-4 mb-4">
-      <h4 class="fw-bold">¡Explora las funciones disponibles!</h4>
-      <p class="mt-3">Desde este panel puedes acceder a toda la información de la empresa, registrar pedidos o utilizar el modelo de predicción para determinar la técnica ideal de fermentación.</p>
-      <div class="d-flex justify-content-center mt-4 flex-wrap">
-        <a href="{{ url_for('empresa') }}" class="btn btn-primary me-2 mb-2">
-          <i class="bi bi-building"></i> Información de la Empresa
-        </a>
-        <a href="{{ url_for('pedido') }}" class="btn btn-success me-2 mb-2">
-          <i class="bi bi-bag"></i> Registrar Pedido
-        </a>
-        <a href="{{ url_for('predict') }}" class="btn btn-warning text-dark fw-semibold me-2 mb-2">
-          <i class="bi bi-robot"></i> Modelo de Predicción
-        </a>
+  <!-- Tarjetas principales -->
+  <div class="row g-4 justify-content-center">
+    <!-- Predictor ML -->
+    <div class="col-md-4 col-sm-6">
+      <div class="card dashboard-card h-100 text-center shadow-sm">
+        <div class="card-body">
+          <div class="icon-circle bg-primary mb-3 mx-auto">
+            <i class="bi bi-cpu text-white fs-2"></i>
+          </div>
+          <h5 class="card-title fw-bold text-primary">Kéfir ML Predictor</h5>
+          <p class="text-muted small">
+            Predice la técnica ideal de fermentación según los parámetros ingresados.
+          </p>
+          <a href="{{ url_for('predict') }}" class="btn btn-primary mt-2">Ir al Predictor</a>
+        </div>
       </div>
     </div>
 
-    <div class="card info-card p-4 mt-5">
-      <h5 class="fw-bold">¿Qué es el modelo de predicción?</h5>
-      <p>
-        El modelo de Machine Learning desarrollado por los estudiantes analiza la fruta base y la cantidad de producto a elaborar, 
-        recomendando automáticamente la <strong>técnica óptima de extracción de azúcares</strong> para maximizar la calidad del kéfir.
-      </p>
+    <!-- Gestión de Pedidos -->
+    <div class="col-md-4 col-sm-6">
+      <div class="card dashboard-card h-100 text-center shadow-sm">
+        <div class="card-body">
+          <div class="icon-circle bg-success mb-3 mx-auto">
+            <i class="bi bi-clipboard-data text-white fs-2"></i>
+          </div>
+          <h5 class="card-title fw-bold text-success">Gestión de Pedidos</h5>
+          <p class="text-muted small">
+            Consulta y registra pedidos realizados por tus clientes de kéfir.
+          </p>
+          <a href="{{ url_for('pedido') }}" class="btn btn-success mt-2">Ver Pedidos</a>
+        </div>
+      </div>
     </div>
 
-    <footer class="mt-5 small">
-      <p>Proyecto académico - Ingeniería de Sistemas y Computación © 2025</p>
-      <p class="text-muted">Sugar Kef - Naturalmente dulce, vitalmente tuyo.</p>
-    </footer>
+    <!-- Información de la Empresa -->
+    <div class="col-md-4 col-sm-6">
+      <div class="card dashboard-card h-100 text-center shadow-sm">
+        <div class="card-body">
+          <div class="icon-circle bg-info mb-3 mx-auto">
+            <i class="bi bi-building text-white fs-2"></i>
+          </div>
+          <h5 class="card-title fw-bold text-info">Nuestra Empresa</h5>
+          <p class="text-muted small">
+            Conoce más sobre la historia, misión y valores de SUGAR KEF.
+          </p>
+          <a href="{{ url_for('empresa') }}" class="btn btn-info mt-2 text-white">Ver Información</a>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+  <!-- Línea divisoria -->
+  <hr class="my-5">
+
+  <!-- Sección informativa -->
+  <div class="text-center mt-4">
+    <h5 class="fw-semibold text-secondary mb-3">
+      <i class="bi bi-lightbulb"></i> Consejo del Día
+    </h5>
+    <p class="text-muted" style="max-width: 600px; margin: 0 auto;">
+      “Recuerda que el kéfir es un organismo vivo: su sabor y textura pueden variar con la temperatura
+      y el tiempo de fermentación. ¡Ajusta tus técnicas y mantén tu cultivo saludable!”
+    </p>
+  </div>
+
+  <div class="text-center mt-5">
+    <a href="{{ url_for('logout') }}" class="btn btn-outline-danger">
+      <i class="bi bi-box-arrow-right"></i> Cerrar sesión
+    </a>
+  </div>
+</div>
+
+{% endblock %}

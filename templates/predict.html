@@ -1,35 +1,36 @@
 {% extends 'base.html' %}
+{% block title %}Predicción | SUGAR KEF{% endblock %}
 {% block content %}
 
-<div class="container mt-5">
-    <h2 class="mb-4">Predicción de Técnica para Elaborar Kéfir</h2>
+<h2 class="section-title mb-4 text-center"><i class="bi bi-cpu"></i> Predicción de Técnica para Elaborar Kéfir</h2>
 
-    {% with messages = get_flashed_messages(with_categories=true) %}
-      {% if messages %}
-        {% for category, message in messages %}
-          <div class="alert alert-{{ category }}">{{ message }}</div>
-        {% endfor %}
-      {% endif %}
-    {% endwith %}
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    {% for category, message in messages %}
+      <div class="alert alert-{{ category }}">{{ message }}</div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
 
-    <form method="POST" action="{{ url_for('predict') }}">
-        <div class="mb-3">
-            <label for="fruta" class="form-label">Fruta base:</label>
-            <select class="form-select" id="fruta" name="fruta" required>
-                <option value="">Seleccione una fruta...</option>
-                {% for fruta in frutas %}
-                    <option value="{{ fruta }}">{{ fruta|capitalize }}</option>
-                {% endfor %}
-            </select>
-        </div>
+<div class="card p-4 mx-auto" style="max-width: 500px;">
+  <form method="POST" action="{{ url_for('predict') }}">
+      <div class="mb-3">
+          <label for="fruta" class="form-label">Fruta base:</label>
+          <select class="form-select" id="fruta" name="fruta" required>
+              <option value="">Seleccione una fruta...</option>
+              {% for fruta in frutas %}
+                  <option value="{{ fruta }}">{{ fruta|capitalize }}</option>
+              {% endfor %}
+          </select>
+      </div>
 
-        <div class="mb-3">
-            <label for="cantidad" class="form-label">Cantidad (ml):</label>
-            <input type="number" class="form-control" id="cantidad" name="cantidad" min="50" step="50" required>
-        </div>
+      <div class="mb-3">
+          <label for="cantidad" class="form-label">Cantidad (ml):</label>
+          <input type="number" class="form-control" id="cantidad" name="cantidad" min="50" step="50" required>
+      </div>
 
-        <button type="submit" class="btn btn-primary">Predecir Técnica</button>
-    </form>
+      <button type="submit" class="btn btn-primary w-100">Predecir Técnica</button>
+  </form>
 </div>
 
 {% endblock %}

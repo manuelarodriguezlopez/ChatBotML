@@ -1,13 +1,123 @@
-body {
-    font-family: 'Poppins', sans-serif;
+/* Fuente global */
+:root {
+  --color-azul: #395e81;
+  --color-verde: #79cbb8;
+  --color-amarillo: #f3c623;
+  --color-blanco: #ffffff;
 }
 
-.nav-tabs .nav-link.active {
-    background-color: #0d6efd;
-    color: white;
-    font-weight: bold;
+body {
+  background: linear-gradient(135deg, var(--color-verde), var(--color-azul));
+  color: #212529;
+  font-family: 'Poppins', sans-serif;
+}
+
+.navbar {
+  background-color: var(--color-azul) !important;
+}
+
+.btn-primary {
+  background-color: var(--color-verde);
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #68b0a5;
 }
 
 .card {
-    border-radius: 15px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+  color: #eee;
+}
+
+
+/* Navbar */
+.navbar {
+  background-color: #0a4275;
+}
+.navbar-brand {
+  color: #fff !important;
+  font-size: 1.4rem;
+}
+.nav-link {
+  color: #f4f8fb !important;
+  transition: color 0.3s ease;
+}
+.nav-link:hover {
+  color: #6bbd8a !important;
+}
+
+/* Botones */
+.btn-primary {
+  background-color: #0a4275;
+  border: none;
+}
+.btn-primary:hover {
+  background-color: #09365e;
+}
+.btn-outline-light:hover {
+  background-color: #6bbd8a;
+  color: #fff !important;
+}
+
+/* Tarjetas */
+.card {
+  border-radius: 20px;
+  border: none;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+}
+
+/* Tablas */
+.table thead th {
+  background-color: #0a4275;
+  color: #fff;
+}
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: #f4f8fb;
+}
+
+/* Formularios */
+.form-control, .form-select {
+  border-radius: 10px;
+  box-shadow: none;
+  border: 1px solid #ced4da;
+}
+
+/* Alertas */
+.alert {
+  border-radius: 10px;
+}
+
+/* Encabezados */
+.section-title {
+  color: #0a4275;
+  font-weight: 700;
+}
+/* ======== Dashboard ======== */
+.dashboard-card {
+  border: none;
+  border-radius: 16px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.icon-circle {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
