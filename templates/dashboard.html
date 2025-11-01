@@ -17,17 +17,19 @@
   <!-- Tarjetas principales -->
   <div class="row g-4 justify-content-center">
     <!-- Predictor ML -->
+
+    <!-- Información de la Empresa -->
     <div class="col-md-4 col-sm-6">
       <div class="card dashboard-card h-100 text-center shadow-sm">
         <div class="card-body">
-          <div class="icon-circle bg-primary mb-3 mx-auto">
-            <i class="bi bi-cpu text-white fs-2"></i>
+          <div class="icon-circle bg-info mb-3 mx-auto">
+            <i class="bi bi-building text-white fs-2"></i>
           </div>
-          <h5 class="card-title fw-bold text-primary">Kéfir ML Predictor</h5>
+          <h5 class="card-title fw-bold text-info">Nuestra Empresa</h5>
           <p class="text-muted small">
-            Predice la técnica ideal de fermentación según los parámetros ingresados.
+            Conoce más sobre la historia, misión y valores de SUGAR KEF.
           </p>
-          <a href="{{ url_for('predict') }}" class="btn btn-primary mt-2">Ir al Predictor</a>
+          <a href="{{ url_for('empresa') }}" class="btn btn-info mt-2 text-white">Ver Información</a>
         </div>
       </div>
     </div>
@@ -48,21 +50,21 @@
       </div>
     </div>
 
-    <!-- Información de la Empresa -->
     <div class="col-md-4 col-sm-6">
       <div class="card dashboard-card h-100 text-center shadow-sm">
         <div class="card-body">
-          <div class="icon-circle bg-info mb-3 mx-auto">
-            <i class="bi bi-building text-white fs-2"></i>
+          <div class="icon-circle bg-primary mb-3 mx-auto">
+            <i class="bi bi-cpu text-white fs-2"></i>
           </div>
-          <h5 class="card-title fw-bold text-info">Nuestra Empresa</h5>
+          <h5 class="card-title fw-bold text-primary">Kéfir ML Predictor</h5>
           <p class="text-muted small">
-            Conoce más sobre la historia, misión y valores de SUGAR KEF.
+            Predice la técnica ideal de fermentación según los parámetros ingresados.
           </p>
-          <a href="{{ url_for('empresa') }}" class="btn btn-info mt-2 text-white">Ver Información</a>
+          <a href="{{ url_for('predict') }}" class="btn btn-primary mt-2">Ir al Predictor</a>
         </div>
       </div>
     </div>
+
   </div>
 
   <!-- Línea divisoria -->

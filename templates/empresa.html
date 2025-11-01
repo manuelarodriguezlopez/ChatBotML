@@ -2,43 +2,98 @@
 {% block title %}SUGAR KEF | Nuestra Empresa{% endblock %}
 {% block content %}
 
+<style>
+  /* Fondo degradado suave */
+  .empresa-section {
+    background: linear-gradient(135deg, #e8f5e9, #e3f2fd);
+    padding: 60px 0;
+  }
 
-<h2 class="section-title text-center mb-5"><i class="bi bi-building"></i> Conoce SUGAR KEF</h2>
+  .empresa-card {
+    border: none;
+    border-radius: 20px;
+    background: #ffffff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+  }
 
-<div class="row justify-content-center">
-  <div class="col-md-10">
-    <div class="card info-card p-4 mb-4">
-      <h4 class="fw-bold text-primary">¿Quiénes Somos?</h4>
-      <p>
-        SUGAR KEF es una empresa dedicada a la producción y comercialización de kéfir de agua,
-        una bebida natural, saludable y fermentada, rica en probióticos. Nuestro propósito es
-        ofrecer un producto que promueva el bienestar digestivo y el equilibrio del cuerpo.
-      </p>
+  .empresa-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.12);
+  }
+
+  .empresa-icon {
+    font-size: 3rem;
+    color: #0d6efd;
+  }
+
+  .section-title {
+    font-weight: 700;
+    color: #212529;
+  }
+
+  .empresa-contact a {
+    transition: 0.3s;
+  }
+
+  .empresa-contact a:hover {
+    opacity: 0.8;
+  }
+</style>
+
+<div class="empresa-section text-center">
+  <div class="container">
+    <h2 class="section-title mb-4"><i class="bi bi-building"></i> Conoce SUGAR KEF</h2>
+    <p class="text-muted mb-5">Un proyecto que combina tradición, salud y biotecnología</p>
+
+    <div class="row g-4 justify-content-center">
+      <!-- Quiénes Somos -->
+      <div class="col-md-4">
+        <div class="empresa-card p-4 h-100">
+          <i class="bi bi-people empresa-icon mb-3"></i>
+          <h4 class="fw-bold text-dark">¿Quiénes Somos?</h4>
+          <p>
+            SUGAR KEF es una empresa dedicada a la producción y comercialización de kéfir de agua,
+            una bebida natural, saludable y fermentada, rica en probióticos. Nuestro propósito es
+            ofrecer un producto que promueva el bienestar digestivo y el equilibrio del cuerpo.
+          </p>
+        </div>
+      </div>
+
+      <!-- Misión -->
+      <div class="col-md-4">
+        <div class="empresa-card p-4 h-100">
+          <i class="bi bi-bullseye empresa-icon mb-3"></i>
+          <h4 class="fw-bold text-dark">Misión</h4>
+          <p>
+            Brindar productos naturales de alta calidad que contribuyan al bienestar y salud de las personas,
+            fomentando hábitos de consumo saludables y sostenibles.
+          </p>
+        </div>
+      </div>
+
+      <!-- Visión -->
+      <div class="col-md-4">
+        <div class="empresa-card p-4 h-100">
+          <i class="bi bi-eye empresa-icon mb-3"></i>
+          <h4 class="fw-bold text-dark">Visión</h4>
+          <p>
+            Ser reconocidos como líderes en el mercado de bebidas saludables en Colombia,
+            destacando por la innovación, la sostenibilidad y la confianza de nuestros clientes.
+          </p>
+        </div>
+      </div>
     </div>
 
-    <div class="card info-card p-4 mb-4">
-      <h4 class="fw-bold text-primary">Misión</h4>
-      <p>
-        Brindar productos naturales de alta calidad que contribuyan al bienestar y salud de las personas,
-        fomentando hábitos de consumo saludables y sostenibles.
-      </p>
-    </div>
-
-    <div class="card info-card p-4 mb-4">
-      <h4 class="fw-bold text-primary">Visión</h4>
-      <p>
-        Ser reconocidos como líderes en el mercado de bebidas saludables en Colombia,
-        destacando por la innovación, la sostenibilidad y la confianza de nuestros clientes.
-      </p>
-    </div>
-
-    <div class="card info-card p-4 mb-4 text-center">
-      <h4 class="fw-bold text-primary">Contáctanos</h4>
+    <!-- Sección de contacto -->
+    <div class="empresa-card p-4 mt-5 mx-auto text-center" style="max-width: 600px;">
+      <i class="bi bi-chat-dots-fill empresa-icon mb-3"></i>
+      <h4 class="fw-bold text-dark">Contáctanos</h4>
       <p><i class="bi bi-geo-alt-fill text-primary"></i> Loja, Ecuador</p>
       <p><i class="bi bi-envelope-fill text-primary"></i> contacto@sugarkef.com</p>
       <p><i class="bi bi-telephone-fill text-primary"></i> +57 312 555 9876</p>
 
-      <div class="mt-3">
+      <div class="empresa-contact mt-3">
         <a href="#" class="text-primary me-3"><i class="bi bi-facebook fs-4"></i></a>
         <a href="#" class="text-danger me-3"><i class="bi bi-instagram fs-4"></i></a>
         <a href="#" class="text-info"><i class="bi bi-twitter-x fs-4"></i></a>
