@@ -21,13 +21,11 @@
         <h5 class="fw-bold text-primary mb-3"><i class="bi bi-clipboard2-data"></i> Detalles del producto</h5>
         <ul class="list-group list-group-flush">
           <li class="list-group-item"><strong>Fruta:</strong> {{ fruta|capitalize }}</li>
-          <li class="list-group-item"><strong>Cantidad:</strong> {{ cantidad }} ml</li>
+          <li class="list-group-item"><strong>Cantidad:</strong> {{ cantidad }} Gr</li>
           <li class="list-group-item"><strong>Nivel de azúcar:</strong> {{ azucar }} °Brix</li>
           <li class="list-group-item"><strong>Temperatura:</strong> {{ temperatura }} °C</li>
           <li class="list-group-item"><strong>Tiempo de fermentación:</strong> {{ tiempo }} h</li>
           <li class="list-group-item"><strong>Grado de madurez:</strong> {{ madurez|replace("_", " ")|capitalize }}</li>
-          <li class="list-group-item"><strong>Fruta congelada:</strong> {{ "Sí" if congelado == "si" else "No" }}</li>
-          <li class="list-group-item"><strong>Método:</strong> {{ metodo|capitalize }}</li>
         </ul>
       </div>
 
@@ -60,8 +58,7 @@
             </text>
           </svg>
         </div>
-
-        <h4 class="fw-bold" style="color: {{ color }};">{{ calidad }}</h4>
+      <h4 class="fw-bold" style="color:{{color}};">{{ calidad }}</h4>
       </div>
     </div>
   </div>
@@ -78,7 +75,7 @@
       <p><strong>Tiempo Estimado:</strong> {{ tecnica_info['Tiempo_estimado'] }}</p>
       <p><strong>Temperatura Óptima:</strong> {{ tecnica_info['Temperatura_optima'] }}</p>
       <p><strong>Herramientas:</strong> {{ tecnica_info['Herramientas'] }}</p>
-      <p><strong>Implementación:</strong> {{ tecnica_info['Implementacion_detallada'] }}</p>
+      <!--<p><strong>Implementación:</strong> {{ tecnica_info['Implementacion_detallada'] }}</p>-->
       <p><strong>Recomendaciones:</strong> {{ tecnica_info['Recomendaciones_finales'] }}</p>
     </div>
   </div>

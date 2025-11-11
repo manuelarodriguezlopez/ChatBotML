@@ -48,9 +48,9 @@ def create_app():
         with open(MODEL_PATH, "rb") as f:
             sugar_model, encoder = pickle.load(f)
         tech_df = pd.read_csv(DATASET_PATH)
-        print("✅ Modelo ML y datasheet cargados correctamente.")
+        print(" Modelo ML y datasheet cargados correctamente.")
     except Exception as e:
-        print(f"⚠️ Error cargando modelo o datasheet: {e}")
+        print(f"Error cargando modelo o datasheet: {e}")
 
     # =========================================================
     # RUTAS DEL SISTEMA
@@ -174,34 +174,57 @@ def create_app():
             temperatura = float(request.form.get('temperatura', 25))
             tiempo = float(request.form.get('tiempo', 12))
             madurez = request.form.get('madurez', 'maduro')
-            congelado = request.form.get('congelado', 'no')
-            metodo = request.form.get('metodo', 'manual')
 
-            # ====== MAPEAR MADUREZ A VALOR NUMÉRICO ======
             madurez_map = {"verde": 0, "maduro": 1, "muy_maduro": 2}
             madurez_val = madurez_map.get(madurez, 1)
 
-            # ====== SIMULACIÓN DE CALIDAD ======
             calidad = 100
             calidad -= abs(temperatura - 26) * 2
             calidad -= abs(tiempo - 12) * 3
             calidad -= abs(azucar - 10) * 1.5
             if madurez_val < 1:
                 calidad -= 10
-            if congelado.lower() in ["sí", "si"]:
-                calidad -= 10
-
             calidad = max(0, min(100, calidad))
 
-            # ====== RECOMENDACIÓN DE TÉCNICA ======
             tecnica_predicha = None
             tecnica_info = None
-            if calidad < 70:
-                df = pd.read_csv('techniques_datasheet.csv')
-                tecnica_predicha = np.random.choice(df["Tecnica_recomendada"])
-                tecnica_info = df[df["Tecnica_recomendada"] == tecnica_predicha].iloc[0].to_dict()
 
-            # ====== RENDERIZAR RESULTADO ======
+            try:
+                if sugar_model is not None and encoder is not None:
+                    X_input = pd.DataFrame([[fruta, cantidad]], columns=["Fruta", "Cantidad"])
+                    X_encoded = encoder.transform(X_input[["Fruta"]]).toarray()
+                    X_final = np.concatenate([X_encoded, X_input[["Cantidad"]].values], axis=1)
+                    tecnica_predicha = str(sugar_model.predict(X_final)[0])
+
+                    match = tech_df[tech_df["Tecnica_recomendada"].astype(str) == tecnica_predicha]
+                    if not match.empty:
+                        tecnica_info = match.iloc[0].to_dict()
+                    else:
+                        tecnica_info = {
+                            "Tecnica_recomendada": tecnica_predicha,
+                            "Descripcion": "No hay detalles registrados para esta técnica.",
+                            "Tiempo_estimado": "N/A",
+                            "Temperatura_optima": "N/A",
+                            "Herramientas": "N/A",
+                            "Recomendaciones": "N/A"
+                        }
+                else:
+                    df_tech = pd.read_csv(DATASET_PATH)
+                    tecnica_predicha = str(np.random.choice(df_tech["Tecnica_recomendada"]))
+                    tecnica_info = df_tech[df_tech["Tecnica_recomendada"] == tecnica_predicha].iloc[0].to_dict()
+
+            except Exception as e:
+                print(f"Error en la predicción del modelo: {e}")
+                tecnica_predicha = None
+                tecnica_info = {
+                    "Tecnica_recomendada": None,
+                    "Descripcion": "No se pudo generar una recomendación automática. Revisa los logs.",
+                    "Tiempo_estimado": "N/A",
+                    "Temperatura_optima": "N/A",
+                    "Herramientas": "N/A",
+                    "Recomendaciones": "N/A"
+                }
+
             return render_template(
                 'result.html',
                 fruta=fruta,
@@ -210,15 +233,14 @@ def create_app():
                 temperatura=temperatura,
                 tiempo=tiempo,
                 madurez=madurez,
-                congelado=congelado,
-                metodo=metodo,
                 calidad=calidad,
                 tecnica_predicha=tecnica_predicha,
                 tecnica_info=tecnica_info
             )
 
+        # Si es método GET, mostrar formulario
         return render_template('predict.html', frutas=frutas)
-    
+        
     return app
 
 

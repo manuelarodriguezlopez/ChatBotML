@@ -1,86 +1,100 @@
 {% extends 'base.html' %}
-{% block title %}Panel Principal | SUGAR KEF{% endblock %}
+{% block title %}Inicio | SUGAR KEF{% endblock %}
 {% block content %}
 
+<!-- HERO SECTION -->
+<section class="hero-section text-center text-white">
+  <h1 class="display-3 fw-bold text-logo">SUGAR KEF</h1>
+</section>
 
-<div class="container mt-4">
-  <!-- Título principal -->
-  <h2 class="section-title text-center mb-4">
-    <i class="bi bi-speedometer2 text-primary"></i> Panel de Control
-  </h2>
 
-  <p class="text-center text-muted mb-5">
-    Bienvenid@{% if current_user.is_authenticated %}, <strong>{{ current_user.name }}</strong>{% endif %}.
-    Aquí puedes acceder rápidamente a las principales funciones del sistema.
-  </p>
+<!-- PRODUCTOS DESTACADOS -->
+<section class="container py-5">
+  <div class="text-center mb-5">
+    <h2 class="fw-bold text-primary">Nuestros Productos</h2>
+    <p class="text-muted">Descubre nuestra línea de kéfires elaborados con ingredientes naturales y procesos controlados de fermentación.</p>
+  </div>
 
-  <!-- Tarjetas principales -->
   <div class="row g-4 justify-content-center">
-    <!-- Predictor ML -->
 
-    <!-- Información de la Empresa -->
-    <div class="col-md-4 col-sm-6">
-      <div class="card dashboard-card h-100 text-center shadow-sm">
-        <div class="card-body">
-          <div class="icon-circle bg-info mb-3 mx-auto">
-            <i class="bi bi-building text-white fs-2"></i>
-          </div>
-          <h5 class="card-title fw-bold text-info">Nuestra Empresa</h5>
-          <p class="text-muted small">
-            Conoce más sobre la historia, misión y valores de SUGAR KEF.
+    <!-- PRODUCTO 1 -->
+    <div class="col-md-4">
+      <div class="product-card position-relative overflow-hidden rounded-4 shadow-sm">
+        <img src="{{ url_for('static', filename='kefir_artesanal.jpeg') }}" class="img-fluid w-100" alt="Kéfir Clásico">
+        <div class="overlay d-flex flex-column justify-content-center align-items-center text-center p-4">
+        <h5 class="fw-bold text-white mb-2">Kéfir artesanal</h5>
+          <p class="text-white-50 small">
+            Nuestro kéfir es producido artesanalmente, conectando con lo más profundo del ser humano.
+            Está destinado a revolucionar la forma en que cuidas tu salud. SUGAR KEF es tu aliado.
           </p>
-          <a href="{{ url_for('empresa') }}" class="btn btn-info mt-2 text-white">Ver Información</a>
         </div>
       </div>
     </div>
 
-    <!-- Gestión de Pedidos -->
-    <div class="col-md-4 col-sm-6">
-      <div class="card dashboard-card h-100 text-center shadow-sm">
-        <div class="card-body">
-          <div class="icon-circle bg-success mb-3 mx-auto">
-            <i class="bi bi-clipboard-data text-white fs-2"></i>
-          </div>
-          <h5 class="card-title fw-bold text-success">Contactanos</h5>
-          <p class="text-muted small">
-            Consulta y registra tus datos, esto hará que nos pongamos en contacto contigo.
+    <!-- PRODUCTO 2 -->
+    <div class="col-md-4">
+      <div class="product-card position-relative overflow-hidden rounded-4 shadow-sm">
+        <img src="{{ url_for('static', filename='kefir_fermento.jpeg') }}" class="img-fluid w-100" alt="Kéfir Frutos Rojos">
+        <div class="overlay d-flex flex-column justify-content-center align-items-center text-center p-4">
+        <h5 class="fw-bold text-white mb-2">Fermento alto en azúcares</h5>
+          <p class="text-white-50 small">
+            SUGAR KEF es posible gracias al fermento de frutas con alto contenido de azúcares,
+            elaborado con gránulos de kéfir. El potencial probiótico que obtiene nuestro producto
+            es de la más alta calidad.
           </p>
-          <a href="{{ url_for('pedido') }}" class="btn btn-success mt-2">Ver Pedidos</a>
         </div>
       </div>
     </div>
 
-    <div class="col-md-4 col-sm-6">
-      <div class="card dashboard-card h-100 text-center shadow-sm">
-        <div class="card-body">
-          <div class="icon-circle bg-primary mb-3 mx-auto">
-            <i class="bi bi-cpu text-white fs-2"></i>
-          </div>
-          <h5 class="card-title fw-bold text-primary">Kéfir ML Predictor</h5>
-          <p class="text-muted small">
-            Predice la técnica ideal de fermentación según los parámetros ingresados.
+    <!-- PRODUCTO 3 -->
+    <div class="col-md-4">
+      <div class="product-card position-relative overflow-hidden rounded-4 shadow-sm">
+        <img src="{{ url_for('static', filename='kefir_final.jpeg') }}" class="img-fluid w-100" alt="Kéfir Vegano">
+      <div class="overlay d-flex flex-column justify-content-center align-items-center text-center p-4">
+          <h5 class="fw-bold text-white mb-2">La mejor opción</h5>
+          <p class="text-white-50 small">
+            SUGAR KEF es armonía con tu cuerpo, con la vida y con la naturaleza.
           </p>
-          <a href="{{ url_for('predict') }}" class="btn btn-primary mt-2">Ir al Predictor</a>
-        </div>
+      </div>
+
       </div>
     </div>
 
   </div>
+</section>
 
-  <!-- Línea divisoria -->
-  <hr class="my-5">
-
-  <!-- Sección informativa -->
-  <div class="text-center mt-4">
-    <h5 class="fw-semibold mb-3 text-dark">
-      <i class="bi bi-lightbulb"></i> Consejo del Día
-    </h5>
-    <p class="text-dark" style="max-width: 600px; margin: 0 auto;">
-      “Recuerda que el kéfir es un organismo vivo: su sabor y textura pueden variar con la temperatura
-      y el tiempo de fermentación. ¡Ajusta tus técnicas y mantén tu cultivo saludable!”
+<!-- SECCIÓN CONÓCENOS -->
+<section class="py-5 text-center" style="background: linear-gradient(135deg, #4dd0e1, #00796b); color: #fff;">
+  <div class="container">
+    <h2 class="fw-bold mb-3">Conócenos</h2>
+    <p class="mx-auto" style="max-width: 700px;">
+      “Naturalmente dulce, vitalmente tuyo”
     </p>
+    <a href="{{ url_for('empresa') }}" class="btn btn-outline-light mt-3">Descubre más</a>
   </div>
+</section>
 
 
+<!-- CONTACTO / PREDICTOR -->
+<section class="container py-5">
+  <div class="row g-4 justify-content-center">
+    <div class="col-md-5">
+      <div class="card border-0 shadow-sm text-center p-4">
+        <i class="bi bi-chat-dots text-success fs-1 mb-3"></i>
+        <h5 class="fw-bold text-success">Contáctanos</h5>
+        <p class="text-muted small">Registra tus datos y te ayudaremos a encontrar el producto ideal para ti.</p>
+        <a href="{{ url_for('pedido') }}" class="btn btn-success mt-2">Ir al Formulario</a>
+      </div>
+    </div>
+    <div class="col-md-5">
+      <div class="card border-0 shadow-sm text-center p-4">
+        <i class="bi bi-cpu text-primary fs-1 mb-3"></i>
+        <h5 class="fw-bold text-primary">Kéfir ML Predictor</h5>
+        <p class="text-muted small">Predice la técnica ideal de fermentación según tus parámetros.</p>
+        <a href="{{ url_for('predict') }}" class="btn btn-primary mt-2">Ir al Predictor</a>
+      </div>
+    </div>
+  </div>
+</section>
 
-  {% endblock %}
+{% endblock %}
